@@ -1,0 +1,2912 @@
+[
+    {
+        "id": "vcu-0001",
+        "location": {
+            "latitude": 50.8310469,
+            "longitude": 34.9528373
+        },
+        "type": "freezer",
+        "owner": "Roomm",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0002",
+        "location": {
+            "latitude": 37.9687252,
+            "longitude": 138.3696482
+        },
+        "type": "freezer",
+        "owner": "Skalith",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0003",
+        "location": {
+            "latitude": -34.493672,
+            "longitude": -58.5854528
+        },
+        "type": "freezer",
+        "owner": "Topdrive",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0004",
+        "location": {
+            "latitude": 37.106326,
+            "longitude": -8.4723108
+        },
+        "type": "freezer",
+        "owner": "Mydeo",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0005",
+        "location": {
+            "latitude": 55.7742636,
+            "longitude": 37.5884971
+        },
+        "type": "freezer",
+        "owner": "Voolia",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0006",
+        "location": {
+            "latitude": 34.6040791,
+            "longitude": 119.1782422
+        },
+        "type": "freezer",
+        "owner": "Quatz",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0007",
+        "location": {
+            "latitude": -8.2216521,
+            "longitude": 113.804931
+        },
+        "type": "freezer",
+        "owner": "Podcat",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0008",
+        "location": {
+            "latitude": 32.8449406,
+            "longitude": 36.2251116
+        },
+        "type": "freezer",
+        "owner": "Buzzdog",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0009",
+        "location": {
+            "latitude": 39.75,
+            "longitude": 19.683333
+        },
+        "type": "freezer",
+        "owner": "Wordware",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0010",
+        "location": {
+            "latitude": 35.8082177,
+            "longitude": 37.2530686
+        },
+        "type": "freezer",
+        "owner": "Riffpedia",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0011",
+        "location": {
+            "latitude": 43.0429124,
+            "longitude": 1.9038837
+        },
+        "type": "freezer",
+        "owner": "Jatri",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0012",
+        "location": {
+            "latitude": 37.066667,
+            "longitude": 10.116667
+        },
+        "type": "freezer",
+        "owner": "Einti",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0013",
+        "location": {
+            "latitude": 37.2425649,
+            "longitude": 111.8568586
+        },
+        "type": "freezer",
+        "owner": "Topicshots",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0014",
+        "location": {
+            "latitude": 28.488535,
+            "longitude": 117.653994
+        },
+        "type": "freezer",
+        "owner": "Edgeclub",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0015",
+        "location": {
+            "latitude": 40.1284892,
+            "longitude": -8.8575795
+        },
+        "type": "freezer",
+        "owner": "Youspan",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0016",
+        "location": {
+            "latitude": 39.912765,
+            "longitude": 116.18362
+        },
+        "type": "freezer",
+        "owner": "Skyble",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0017",
+        "location": {
+            "latitude": -5.1804211,
+            "longitude": 105.4302383
+        },
+        "type": "freezer",
+        "owner": "Ntags",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0018",
+        "location": {
+            "latitude": 28.15041,
+            "longitude": 115.667833
+        },
+        "type": "freezer",
+        "owner": "Edgetag",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0019",
+        "location": {
+            "latitude": 13.7634469,
+            "longitude": 123.055727
+        },
+        "type": "freezer",
+        "owner": "Edgeify",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0020",
+        "location": {
+            "latitude": 59.1815399,
+            "longitude": 17.5858441
+        },
+        "type": "freezer",
+        "owner": "Zoonoodle",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0021",
+        "location": {
+            "latitude": 57.6864243,
+            "longitude": 11.9202689
+        },
+        "type": "freezer",
+        "owner": "Ntag",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0022",
+        "location": {
+            "latitude": 20.5479443,
+            "longitude": -97.4513197
+        },
+        "type": "freezer",
+        "owner": "Zoozzy",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0023",
+        "location": {
+            "latitude": -7.1550724,
+            "longitude": 108.1498006
+        },
+        "type": "freezer",
+        "owner": "Quire",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0024",
+        "location": {
+            "latitude": 28.0846121,
+            "longitude": -15.4331673
+        },
+        "type": "freezer",
+        "owner": "Mybuzz",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0025",
+        "location": {
+            "latitude": -12.1349328,
+            "longitude": 44.4252603
+        },
+        "type": "freezer",
+        "owner": "Agimba",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0026",
+        "location": {
+            "latitude": 28.3259527,
+            "longitude": 69.8373919
+        },
+        "type": "freezer",
+        "owner": "Quaxo",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0027",
+        "location": {
+            "latitude": 22.585397,
+            "longitude": 113.38492
+        },
+        "type": "freezer",
+        "owner": "Photobean",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0028",
+        "location": {
+            "latitude": 40.2715286,
+            "longitude": 44.633383
+        },
+        "type": "freezer",
+        "owner": "Ntags",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0029",
+        "location": {
+            "latitude": 48.269924,
+            "longitude": 26.1261538
+        },
+        "type": "freezer",
+        "owner": "Centidel",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0030",
+        "location": {
+            "latitude": -7.2949141,
+            "longitude": 107.8021158
+        },
+        "type": "freezer",
+        "owner": "Linkbuzz",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0031",
+        "location": {
+            "latitude": -9.5662977,
+            "longitude": 124.4891278
+        },
+        "type": "freezer",
+        "owner": "Wikivu",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0032",
+        "location": {
+            "latitude": 15.1634121,
+            "longitude": 36.6525696
+        },
+        "type": "freezer",
+        "owner": "Skipstorm",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0034",
+        "location": {
+            "latitude": 48.3441198,
+            "longitude": 33.5244801
+        },
+        "type": "freezer",
+        "owner": "Yakijo",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0035",
+        "location": {
+            "latitude": 38.5928606,
+            "longitude": -2.5498208
+        },
+        "type": "freezer",
+        "owner": "Quaxo",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0036",
+        "location": {
+            "latitude": 50.4800637,
+            "longitude": 16.1816772
+        },
+        "type": "freezer",
+        "owner": "Brainverse",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0037",
+        "location": {
+            "latitude": 23.460229,
+            "longitude": 114.010317
+        },
+        "type": "freezer",
+        "owner": "Vidoo",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0038",
+        "location": {
+            "latitude": 40.9234909,
+            "longitude": -74.1797766
+        },
+        "type": "freezer",
+        "owner": "Realbridge",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0039",
+        "location": {
+            "latitude": 50.893024,
+            "longitude": 18.0313123
+        },
+        "type": "freezer",
+        "owner": "Realblab",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0040",
+        "location": {
+            "latitude": -0.819175,
+            "longitude": 120.167297
+        },
+        "type": "freezer",
+        "owner": "Rhybox",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0041",
+        "location": {
+            "latitude": 45.6152297,
+            "longitude": -61.3552089
+        },
+        "type": "freezer",
+        "owner": "Realcube",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0042",
+        "location": {
+            "latitude": 60.4783655,
+            "longitude": 15.3710047
+        },
+        "type": "freezer",
+        "owner": "Feedfish",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0043",
+        "location": {
+            "latitude": 24.562945,
+            "longitude": 118.26435
+        },
+        "type": "freezer",
+        "owner": "Linklinks",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0044",
+        "location": {
+            "latitude": 19.5037694,
+            "longitude": -99.1324282
+        },
+        "type": "freezer",
+        "owner": "Twimm",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0045",
+        "location": {
+            "latitude": -12.930823,
+            "longitude": -75.7803892
+        },
+        "type": "freezer",
+        "owner": "Vitz",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0046",
+        "location": {
+            "latitude": 57.782249,
+            "longitude": 13.4161644
+        },
+        "type": "freezer",
+        "owner": "Tambee",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0047",
+        "location": {
+            "latitude": 15.9082382,
+            "longitude": 120.4291289
+        },
+        "type": "freezer",
+        "owner": "Trupe",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0048",
+        "location": {
+            "latitude": 41.98803,
+            "longitude": 20.94517
+        },
+        "type": "freezer",
+        "owner": "Twitterbridge",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0049",
+        "location": {
+            "latitude": 53.1460852,
+            "longitude": 14.8924044
+        },
+        "type": "freezer",
+        "owner": "Photofeed",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0050",
+        "location": {
+            "latitude": 50.9249111,
+            "longitude": 15.2294387
+        },
+        "type": "freezer",
+        "owner": "Pixonyx",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0051",
+        "location": {
+            "latitude": 30.554299,
+            "longitude": 114.316513
+        },
+        "type": "freezer",
+        "owner": "Feedfish",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0052",
+        "location": {
+            "latitude": 39.75,
+            "longitude": 19.683333
+        },
+        "type": "freezer",
+        "owner": "Yodoo",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0053",
+        "location": {
+            "latitude": 63.1747832,
+            "longitude": 17.2654819
+        },
+        "type": "freezer",
+        "owner": "Tagcat",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0054",
+        "location": {
+            "latitude": -7.6629639,
+            "longitude": 109.7680967
+        },
+        "type": "freezer",
+        "owner": "Rhybox",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0055",
+        "location": {
+            "latitude": 53.153,
+            "longitude": 103.7714
+        },
+        "type": "freezer",
+        "owner": "Mydo",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0056",
+        "location": {
+            "latitude": 39.61335,
+            "longitude": -8.9519943
+        },
+        "type": "freezer",
+        "owner": "Dazzlesphere",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0057",
+        "location": {
+            "latitude": 38.5733981,
+            "longitude": 139.8280167
+        },
+        "type": "freezer",
+        "owner": "Vinder",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0058",
+        "location": {
+            "latitude": 31.491169,
+            "longitude": 120.31191
+        },
+        "type": "freezer",
+        "owner": "Photolist",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0059",
+        "location": {
+            "latitude": 15.2931866,
+            "longitude": -90.1147496
+        },
+        "type": "freezer",
+        "owner": "Gabcube",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0060",
+        "location": {
+            "latitude": 30.208404,
+            "longitude": 116.681928
+        },
+        "type": "freezer",
+        "owner": "Photobug",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0061",
+        "location": {
+            "latitude": 37.8322686,
+            "longitude": -25.145931
+        },
+        "type": "freezer",
+        "owner": "Browsetype",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0062",
+        "location": {
+            "latitude": 38.0932151,
+            "longitude": 69.3413913
+        },
+        "type": "freezer",
+        "owner": "Babbleset",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0063",
+        "location": {
+            "latitude": 7.55633,
+            "longitude": 99.61141
+        },
+        "type": "freezer",
+        "owner": "Npath",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0064",
+        "location": {
+            "latitude": 16.7260699,
+            "longitude": 95.6484241
+        },
+        "type": "freezer",
+        "owner": "Feedbug",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0065",
+        "location": {
+            "latitude": 8.99214,
+            "longitude": 105.19602
+        },
+        "type": "freezer",
+        "owner": "Riffpath",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0066",
+        "location": {
+            "latitude": 40.882377,
+            "longitude": 122.685217
+        },
+        "type": "freezer",
+        "owner": "Trupe",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0067",
+        "location": {
+            "latitude": 14.1056708,
+            "longitude": 38.2849463
+        },
+        "type": "freezer",
+        "owner": "Twitterwire",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0068",
+        "location": {
+            "latitude": 4.682198,
+            "longitude": 9.3215345
+        },
+        "type": "freezer",
+        "owner": "Leenti",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0069",
+        "location": {
+            "latitude": 55.7279446,
+            "longitude": 93.768409
+        },
+        "type": "freezer",
+        "owner": "Edgewire",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0070",
+        "location": {
+            "latitude": -29.362503,
+            "longitude": -51.08671
+        },
+        "type": "freezer",
+        "owner": "Babbleopia",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0071",
+        "location": {
+            "latitude": 59.9050895,
+            "longitude": 10.7673005
+        },
+        "type": "freezer",
+        "owner": "Yodo",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0072",
+        "location": {
+            "latitude": -19.39656,
+            "longitude": -40.0658731
+        },
+        "type": "freezer",
+        "owner": "Quire",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0073",
+        "location": {
+            "latitude": 15.7377569,
+            "longitude": 120.6348716
+        },
+        "type": "freezer",
+        "owner": "Thoughtbeat",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0074",
+        "location": {
+            "latitude": 25.822349,
+            "longitude": 107.322323
+        },
+        "type": "freezer",
+        "owner": "Podcat",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0075",
+        "location": {
+            "latitude": 25.6577006,
+            "longitude": 57.7856677
+        },
+        "type": "freezer",
+        "owner": "Digitube",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0076",
+        "location": {
+            "latitude": -27.6923006,
+            "longitude": 23.0367512
+        },
+        "type": "freezer",
+        "owner": "Voonder",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0077",
+        "location": {
+            "latitude": 51.3591174,
+            "longitude": 112.484985
+        },
+        "type": "freezer",
+        "owner": "Skaboo",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0078",
+        "location": {
+            "latitude": 44.335532,
+            "longitude": 85.625121
+        },
+        "type": "freezer",
+        "owner": "Quinu",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0079",
+        "location": {
+            "latitude": 31.574996,
+            "longitude": 35.149421
+        },
+        "type": "freezer",
+        "owner": "Trudoo",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0080",
+        "location": {
+            "latitude": 51.7976037,
+            "longitude": 19.4547287
+        },
+        "type": "freezer",
+        "owner": "Feedspan",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0081",
+        "location": {
+            "latitude": 53.8446847,
+            "longitude": 18.9605242
+        },
+        "type": "freezer",
+        "owner": "Edgeclub",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0082",
+        "location": {
+            "latitude": 28.918207,
+            "longitude": 120.001353
+        },
+        "type": "freezer",
+        "owner": "Brainlounge",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0083",
+        "location": {
+            "latitude": 35.4937018,
+            "longitude": 110.3838909
+        },
+        "type": "freezer",
+        "owner": "Blogtag",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0084",
+        "location": {
+            "latitude": 55.6838972,
+            "longitude": 12.5741382
+        },
+        "type": "freezer",
+        "owner": "Jaxworks",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0085",
+        "location": {
+            "latitude": 56.155293,
+            "longitude": 13.7676059
+        },
+        "type": "freezer",
+        "owner": "Nlounge",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0086",
+        "location": {
+            "latitude": 31.2169358,
+            "longitude": 107.497911
+        },
+        "type": "freezer",
+        "owner": "Brightdog",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0087",
+        "location": {
+            "latitude": -0.1634664,
+            "longitude": 35.5931397
+        },
+        "type": "freezer",
+        "owner": "Gabcube",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0088",
+        "location": {
+            "latitude": 40.8890204,
+            "longitude": 22.9175369
+        },
+        "type": "freezer",
+        "owner": "Fanoodle",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0090",
+        "location": {
+            "latitude": 63.0040018,
+            "longitude": 16.6737805
+        },
+        "type": "freezer",
+        "owner": "Gigabox",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0091",
+        "location": {
+            "latitude": 38.1265094,
+            "longitude": 140.2770274
+        },
+        "type": "freezer",
+        "owner": "Skyvu",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0092",
+        "location": {
+            "latitude": 16.289185,
+            "longitude": 119.90559
+        },
+        "type": "freezer",
+        "owner": "Kwimbee",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0093",
+        "location": {
+            "latitude": -20.8740173,
+            "longitude": -48.299098
+        },
+        "type": "freezer",
+        "owner": "Jabbercube",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0094",
+        "location": {
+            "latitude": 12.4537943,
+            "longitude": 102.2290442
+        },
+        "type": "freezer",
+        "owner": "Podcat",
+        "status": "active"
+    },
+    {
+        "id": "vcu-0095",
+        "location": {
+            "latitude": -27.5918875,
+            "longitude": -48.4939886
+        },
+        "type": "freezer",
+        "owner": "Wikido",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0096",
+        "location": {
+            "latitude": 35.99,
+            "longitude": -115.09
+        },
+        "type": "freezer",
+        "owner": "Zoomlounge",
+        "status": "inactive"
+    },
+    {
+        "id": "vcu-0097",
+        "location": {
+            "latitude": -25.4648258,
+            "longitude": -57.0421483
+        },
+        "type": "freezer",
+        "owner": "Meevee",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0098",
+        "location": {
+            "latitude": 37.868872,
+            "longitude": 116.144417
+        },
+        "type": "freezer",
+        "owner": "Snaptags",
+        "status": "error"
+    },
+    {
+        "id": "vcu-0099",
+        "location": {
+            "latitude": -3.9879753,
+            "longitude": -79.3535714
+        },
+        "type": "freezer",
+        "owner": "Jabbertype",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0000",
+        "location": {
+            "latitude": 54.7083095,
+            "longitude": 76.5513541
+        },
+        "type": "sensor",
+        "owner": "Jaxworks",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0001",
+        "location": {
+            "latitude": 25.261992,
+            "longitude": 114.593792
+        },
+        "type": "sensor",
+        "owner": "Quaxo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0003",
+        "location": {
+            "latitude": 25.555534,
+            "longitude": 118.341965
+        },
+        "type": "sensor",
+        "owner": "Kare",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0004",
+        "location": {
+            "latitude": 51.3666314,
+            "longitude": 6.1313871
+        },
+        "type": "sensor",
+        "owner": "Avamm",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0005",
+        "location": {
+            "latitude": 26.2174802,
+            "longitude": 127.7111415
+        },
+        "type": "sensor",
+        "owner": "Quimm",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0007",
+        "location": {
+            "latitude": 49.9166289,
+            "longitude": 19.1520875
+        },
+        "type": "sensor",
+        "owner": "Jabbercube",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0008",
+        "location": {
+            "latitude": -7.4468,
+            "longitude": 108.00217
+        },
+        "type": "sensor",
+        "owner": "Zoombox",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0009",
+        "location": {
+            "latitude": 35.761829,
+            "longitude": 115.029215
+        },
+        "type": "sensor",
+        "owner": "Zoomdog",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0010",
+        "location": {
+            "latitude": 51.9534228,
+            "longitude": 66.4121857
+        },
+        "type": "sensor",
+        "owner": "Yakitri",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0011",
+        "location": {
+            "latitude": 5.1601362,
+            "longitude": 10.1871351
+        },
+        "type": "sensor",
+        "owner": "Jabbersphere",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0012",
+        "location": {
+            "latitude": 6.1205312,
+            "longitude": -75.2803017
+        },
+        "type": "sensor",
+        "owner": "Roomm",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0013",
+        "location": {
+            "latitude": -6.9579,
+            "longitude": 113.1741
+        },
+        "type": "sensor",
+        "owner": "Realcube",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0014",
+        "location": {
+            "latitude": -6.3077304,
+            "longitude": 106.1831224
+        },
+        "type": "sensor",
+        "owner": "Flashpoint",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0015",
+        "location": {
+            "latitude": 19.0807684,
+            "longitude": -71.6986206
+        },
+        "type": "sensor",
+        "owner": "Dabtype",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0016",
+        "location": {
+            "latitude": 15.1042521,
+            "longitude": 101.0768333
+        },
+        "type": "sensor",
+        "owner": "Leexo",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0017",
+        "location": {
+            "latitude": 55.6699522,
+            "longitude": 12.5708777
+        },
+        "type": "sensor",
+        "owner": "Tagpad",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0018",
+        "location": {
+            "latitude": 33.1401715,
+            "longitude": 119.7889248
+        },
+        "type": "sensor",
+        "owner": "Meedoo",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0019",
+        "location": {
+            "latitude": 34.657162,
+            "longitude": 104.549685
+        },
+        "type": "sensor",
+        "owner": "Mita",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0020",
+        "location": {
+            "latitude": 23.201636,
+            "longitude": 99.330641
+        },
+        "type": "sensor",
+        "owner": "Zoombeat",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0021",
+        "location": {
+            "latitude": 16.9818844,
+            "longitude": 104.4490398
+        },
+        "type": "sensor",
+        "owner": "Abata",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0022",
+        "location": {
+            "latitude": 34.746611,
+            "longitude": 113.625328
+        },
+        "type": "sensor",
+        "owner": "Topdrive",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0023",
+        "location": {
+            "latitude": 10.316625,
+            "longitude": -84.428401
+        },
+        "type": "sensor",
+        "owner": "Wikizz",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0024",
+        "location": {
+            "latitude": 37.93,
+            "longitude": -122.38
+        },
+        "type": "sensor",
+        "owner": "Eire",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0025",
+        "location": {
+            "latitude": 6.7990626,
+            "longitude": -1.0849592
+        },
+        "type": "sensor",
+        "owner": "Vidoo",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0026",
+        "location": {
+            "latitude": 32.6350368,
+            "longitude": 115.5777522
+        },
+        "type": "sensor",
+        "owner": "Oyondu",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0027",
+        "location": {
+            "latitude": 40.2487413,
+            "longitude": 72.1297653
+        },
+        "type": "sensor",
+        "owner": "Topiclounge",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0028",
+        "location": {
+            "latitude": 42.901533,
+            "longitude": 125.136451
+        },
+        "type": "sensor",
+        "owner": "Omba",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0029",
+        "location": {
+            "latitude": 59.9522733,
+            "longitude": 10.6776776
+        },
+        "type": "sensor",
+        "owner": "Blogtags",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0030",
+        "location": {
+            "latitude": -33.3516458,
+            "longitude": -56.5112061
+        },
+        "type": "sensor",
+        "owner": "Avavee",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0031",
+        "location": {
+            "latitude": 48.2735736,
+            "longitude": 24.411971
+        },
+        "type": "sensor",
+        "owner": "Jabberstorm",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0032",
+        "location": {
+            "latitude": 40.3777496,
+            "longitude": 69.2490136
+        },
+        "type": "sensor",
+        "owner": "Npath",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0033",
+        "location": {
+            "latitude": -26.9555686,
+            "longitude": -60.9720552
+        },
+        "type": "sensor",
+        "owner": "Teklist",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0034",
+        "location": {
+            "latitude": 42.741005,
+            "longitude": 123.355701
+        },
+        "type": "sensor",
+        "owner": "Wordify",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0035",
+        "location": {
+            "latitude": 45.5593978,
+            "longitude": -122.807445
+        },
+        "type": "sensor",
+        "owner": "Yakijo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0036",
+        "location": {
+            "latitude": 40.8318278,
+            "longitude": 44.2797884
+        },
+        "type": "sensor",
+        "owner": "Twiyo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0037",
+        "location": {
+            "latitude": 40.1919977,
+            "longitude": 122.1700081
+        },
+        "type": "sensor",
+        "owner": "Layo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0038",
+        "location": {
+            "latitude": 45.300292,
+            "longitude": 4.2531745
+        },
+        "type": "sensor",
+        "owner": "Gigaclub",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0039",
+        "location": {
+            "latitude": 6.9655812,
+            "longitude": 125.4609462
+        },
+        "type": "sensor",
+        "owner": "Yoveo",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0040",
+        "location": {
+            "latitude": -9.8543,
+            "longitude": 124.2531
+        },
+        "type": "sensor",
+        "owner": "Edgewire",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0041",
+        "location": {
+            "latitude": 49.5706463,
+            "longitude": 3.6245097
+        },
+        "type": "sensor",
+        "owner": "Youbridge",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0042",
+        "location": {
+            "latitude": 48.015883,
+            "longitude": 37.80285
+        },
+        "type": "sensor",
+        "owner": "Mycat",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0043",
+        "location": {
+            "latitude": 29.893672,
+            "longitude": 110.346166
+        },
+        "type": "sensor",
+        "owner": "Divape",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0044",
+        "location": {
+            "latitude": 19.482042,
+            "longitude": -99.1985584
+        },
+        "type": "sensor",
+        "owner": "Quinu",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0045",
+        "location": {
+            "latitude": 36.7230724,
+            "longitude": 10.3441758
+        },
+        "type": "sensor",
+        "owner": "Flipstorm",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0046",
+        "location": {
+            "latitude": 48.0515029,
+            "longitude": 6.535628
+        },
+        "type": "sensor",
+        "owner": "Jabbertype",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0047",
+        "location": {
+            "latitude": 34.33629,
+            "longitude": 119.547248
+        },
+        "type": "sensor",
+        "owner": "Vidoo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0048",
+        "location": {
+            "latitude": 44.9114638,
+            "longitude": 15.9259321
+        },
+        "type": "sensor",
+        "owner": "Plambee",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0049",
+        "location": {
+            "latitude": 14.0119593,
+            "longitude": 43.8673222
+        },
+        "type": "sensor",
+        "owner": "Edgewire",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0050",
+        "location": {
+            "latitude": 34.9852597,
+            "longitude": 133.4885513
+        },
+        "type": "sensor",
+        "owner": "Yakidoo",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0051",
+        "location": {
+            "latitude": 50.8885079,
+            "longitude": 19.0438326
+        },
+        "type": "sensor",
+        "owner": "Voonte",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0052",
+        "location": {
+            "latitude": 50.3057063,
+            "longitude": 21.8736798
+        },
+        "type": "sensor",
+        "owner": "Fivechat",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0053",
+        "location": {
+            "latitude": 19.3851705,
+            "longitude": -99.1837453
+        },
+        "type": "sensor",
+        "owner": "Livefish",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0054",
+        "location": {
+            "latitude": 59.8445787,
+            "longitude": 13.2588145
+        },
+        "type": "sensor",
+        "owner": "Nlounge",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0055",
+        "location": {
+            "latitude": 12.712478,
+            "longitude": 124.036411
+        },
+        "type": "sensor",
+        "owner": "Flashpoint",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0056",
+        "location": {
+            "latitude": 41.746429,
+            "longitude": 22.199654
+        },
+        "type": "sensor",
+        "owner": "Brightdog",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0057",
+        "location": {
+            "latitude": 49.9481168,
+            "longitude": 14.6774529
+        },
+        "type": "sensor",
+        "owner": "Babbleblab",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0058",
+        "location": {
+            "latitude": 27.23895,
+            "longitude": 111.467674
+        },
+        "type": "sensor",
+        "owner": "Roomm",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0059",
+        "location": {
+            "latitude": 25.823925,
+            "longitude": 111.014357
+        },
+        "type": "sensor",
+        "owner": "Eazzy",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0060",
+        "location": {
+            "latitude": 34.041367,
+            "longitude": 110.827862
+        },
+        "type": "sensor",
+        "owner": "Skaboo",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0061",
+        "location": {
+            "latitude": 18.6220301,
+            "longitude": -99.1559935
+        },
+        "type": "sensor",
+        "owner": "Minyx",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0062",
+        "location": {
+            "latitude": 29.915093,
+            "longitude": 118.279198
+        },
+        "type": "sensor",
+        "owner": "Wordtune",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0063",
+        "location": {
+            "latitude": 57.6734233,
+            "longitude": 14.9774312
+        },
+        "type": "sensor",
+        "owner": "Izio",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0065",
+        "location": {
+            "latitude": 57.7236265,
+            "longitude": 11.7360101
+        },
+        "type": "sensor",
+        "owner": "Browseblab",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0066",
+        "location": {
+            "latitude": 25.489999,
+            "longitude": 103.796167
+        },
+        "type": "sensor",
+        "owner": "Eidel",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0067",
+        "location": {
+            "latitude": 47.8569408,
+            "longitude": 39.9593673
+        },
+        "type": "sensor",
+        "owner": "Gevee",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0068",
+        "location": {
+            "latitude": 11.5610083,
+            "longitude": 8.581717
+        },
+        "type": "sensor",
+        "owner": "Kanoodle",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0069",
+        "location": {
+            "latitude": 62.5988609,
+            "longitude": 34.9332074
+        },
+        "type": "sensor",
+        "owner": "Agivu",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0070",
+        "location": {
+            "latitude": 46.8464389,
+            "longitude": 106.215698
+        },
+        "type": "sensor",
+        "owner": "Babbleopia",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0071",
+        "location": {
+            "latitude": 21.244721,
+            "longitude": 110.455332
+        },
+        "type": "sensor",
+        "owner": "Twitterlist",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0072",
+        "location": {
+            "latitude": 39.726929,
+            "longitude": 116.341395
+        },
+        "type": "sensor",
+        "owner": "Livetube",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0073",
+        "location": {
+            "latitude": 14.5638721,
+            "longitude": 121.0327599
+        },
+        "type": "sensor",
+        "owner": "Voonder",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0074",
+        "location": {
+            "latitude": 27.483293,
+            "longitude": 120.562211
+        },
+        "type": "sensor",
+        "owner": "Shuffledrive",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0075",
+        "location": {
+            "latitude": 35.1674,
+            "longitude": 25.48139
+        },
+        "type": "sensor",
+        "owner": "Gabspot",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0076",
+        "location": {
+            "latitude": -5.896111,
+            "longitude": -78.690278
+        },
+        "type": "sensor",
+        "owner": "Trilia",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0077",
+        "location": {
+            "latitude": 16.2359,
+            "longitude": -61.558
+        },
+        "type": "sensor",
+        "owner": "Browsecat",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0078",
+        "location": {
+            "latitude": 43.3211671,
+            "longitude": 45.9920397
+        },
+        "type": "sensor",
+        "owner": "Myworks",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0079",
+        "location": {
+            "latitude": 53.158984,
+            "longitude": -7.185387
+        },
+        "type": "sensor",
+        "owner": "Quimm",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0080",
+        "location": {
+            "latitude": 5.1677581,
+            "longitude": -52.6449937
+        },
+        "type": "sensor",
+        "owner": "Camido",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0081",
+        "location": {
+            "latitude": 36.025609,
+            "longitude": -78.9853813
+        },
+        "type": "sensor",
+        "owner": "Shufflester",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0082",
+        "location": {
+            "latitude": 15.0045218,
+            "longitude": -2.9550619
+        },
+        "type": "sensor",
+        "owner": "Topicblab",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0083",
+        "location": {
+            "latitude": 31.647135,
+            "longitude": 120.93382
+        },
+        "type": "sensor",
+        "owner": "Quimba",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0084",
+        "location": {
+            "latitude": 51.5350444,
+            "longitude": 46.0081774
+        },
+        "type": "sensor",
+        "owner": "Bubbletube",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0085",
+        "location": {
+            "latitude": 48.9005909,
+            "longitude": 2.5197726
+        },
+        "type": "sensor",
+        "owner": "Tagcat",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0086",
+        "location": {
+            "latitude": 13.7643349,
+            "longitude": 122.9760543
+        },
+        "type": "sensor",
+        "owner": "Gigashots",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0087",
+        "location": {
+            "latitude": 48.891587,
+            "longitude": 2.2408938
+        },
+        "type": "sensor",
+        "owner": "Devbug",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0088",
+        "location": {
+            "latitude": 41.1086264,
+            "longitude": -7.6901721
+        },
+        "type": "sensor",
+        "owner": "Blogtag",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0089",
+        "location": {
+            "latitude": 50.1424249,
+            "longitude": 15.1188883
+        },
+        "type": "sensor",
+        "owner": "Youopia",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0090",
+        "location": {
+            "latitude": 50.5374971,
+            "longitude": 16.0198605
+        },
+        "type": "sensor",
+        "owner": "Oodoo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0092",
+        "location": {
+            "latitude": 50.246964,
+            "longitude": 120.1896411
+        },
+        "type": "sensor",
+        "owner": "Oyoba",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0093",
+        "location": {
+            "latitude": 5.746649,
+            "longitude": -75.977569
+        },
+        "type": "sensor",
+        "owner": "Riffpedia",
+        "status": "active"
+    },
+    {
+        "id": "vsu-0094",
+        "location": {
+            "latitude": 38.5298862,
+            "longitude": -28.5185092
+        },
+        "type": "sensor",
+        "owner": "Tagopia",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0095",
+        "location": {
+            "latitude": -33.453544,
+            "longitude": -61.486922
+        },
+        "type": "sensor",
+        "owner": "Zooxo",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0097",
+        "location": {
+            "latitude": 20.9455701,
+            "longitude": -101.4423451
+        },
+        "type": "sensor",
+        "owner": "Snaptags",
+        "status": "error"
+    },
+    {
+        "id": "vsu-0098",
+        "location": {
+            "latitude": 48.967159,
+            "longitude": 17.0279282
+        },
+        "type": "sensor",
+        "owner": "Tambee",
+        "status": "inactive"
+    },
+    {
+        "id": "vsu-0099",
+        "location": {
+            "latitude": 11.2927933,
+            "longitude": 11.3119092
+        },
+        "type": "sensor",
+        "owner": "Demivee",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0000",
+        "location": {
+            "latitude": -12.3502374,
+            "longitude": 44.5278242
+        },
+        "type": "thawer",
+        "owner": "Devpoint",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0001",
+        "location": {
+            "latitude": 55.71667,
+            "longitude": 37.41667
+        },
+        "type": "thawer",
+        "owner": "Leenti",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0002",
+        "location": {
+            "latitude": 16.7646219,
+            "longitude": 96.5329775
+        },
+        "type": "thawer",
+        "owner": "Zoomdog",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0003",
+        "location": {
+            "latitude": -25.3823822,
+            "longitude": -57.5872528
+        },
+        "type": "thawer",
+        "owner": "Yotz",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0004",
+        "location": {
+            "latitude": 38.5067706,
+            "longitude": -90.3766634
+        },
+        "type": "thawer",
+        "owner": "Skimia",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0005",
+        "location": {
+            "latitude": 47.1575927,
+            "longitude": 115.3064094
+        },
+        "type": "thawer",
+        "owner": "Jamia",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0006",
+        "location": {
+            "latitude": 41.933917,
+            "longitude": 126.422806
+        },
+        "type": "thawer",
+        "owner": "Yodel",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0007",
+        "location": {
+            "latitude": 8.47834,
+            "longitude": 125.743983
+        },
+        "type": "thawer",
+        "owner": "Dynabox",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0008",
+        "location": {
+            "latitude": -12.1584708,
+            "longitude": 44.4364706
+        },
+        "type": "thawer",
+        "owner": "Gabspot",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0009",
+        "location": {
+            "latitude": 49.909141,
+            "longitude": 19.6159543
+        },
+        "type": "thawer",
+        "owner": "Izio",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0010",
+        "location": {
+            "latitude": 41.3525,
+            "longitude": 79.46861
+        },
+        "type": "thawer",
+        "owner": "InnoZ",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0011",
+        "location": {
+            "latitude": -7.0392183,
+            "longitude": 109.9020509
+        },
+        "type": "thawer",
+        "owner": "Quatz",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0012",
+        "location": {
+            "latitude": -5.8248093,
+            "longitude": -46.1594921
+        },
+        "type": "thawer",
+        "owner": "Youtags",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0013",
+        "location": {
+            "latitude": 5.9840985,
+            "longitude": 116.0761121
+        },
+        "type": "thawer",
+        "owner": "Photobean",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0014",
+        "location": {
+            "latitude": 36.6826123,
+            "longitude": 126.8483951
+        },
+        "type": "thawer",
+        "owner": "Talane",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0015",
+        "location": {
+            "latitude": 14.9380064,
+            "longitude": 121.0208817
+        },
+        "type": "thawer",
+        "owner": "Thoughtsphere",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0016",
+        "location": {
+            "latitude": 33.6435199,
+            "longitude": 42.8253662
+        },
+        "type": "thawer",
+        "owner": "Gevee",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0017",
+        "location": {
+            "latitude": 39.8575426,
+            "longitude": -8.9052093
+        },
+        "type": "thawer",
+        "owner": "Fadeo",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0018",
+        "location": {
+            "latitude": -7.7623521,
+            "longitude": 112.9848168
+        },
+        "type": "thawer",
+        "owner": "Brainbox",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0019",
+        "location": {
+            "latitude": 41.4591168,
+            "longitude": 48.8020626
+        },
+        "type": "thawer",
+        "owner": "Feednation",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0020",
+        "location": {
+            "latitude": 57.6959194,
+            "longitude": 11.8724097
+        },
+        "type": "thawer",
+        "owner": "Livetube",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0021",
+        "location": {
+            "latitude": 7.3111492,
+            "longitude": -73.2057595
+        },
+        "type": "thawer",
+        "owner": "Demizz",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0022",
+        "location": {
+            "latitude": 46.8118134,
+            "longitude": -0.5451553
+        },
+        "type": "thawer",
+        "owner": "Aimbu",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0023",
+        "location": {
+            "latitude": -25.7333842,
+            "longitude": -59.1078529
+        },
+        "type": "thawer",
+        "owner": "Innojam",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0024",
+        "location": {
+            "latitude": 14.1163511,
+            "longitude": 121.2225723
+        },
+        "type": "thawer",
+        "owner": "Podcat",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0025",
+        "location": {
+            "latitude": 14.577579,
+            "longitude": -90.73956
+        },
+        "type": "thawer",
+        "owner": "Skimia",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0026",
+        "location": {
+            "latitude": 32.765421,
+            "longitude": -96.7413706
+        },
+        "type": "thawer",
+        "owner": "Eayo",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0027",
+        "location": {
+            "latitude": -1.3928344,
+            "longitude": -78.4268758
+        },
+        "type": "thawer",
+        "owner": "Yamia",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0028",
+        "location": {
+            "latitude": 43.2981839,
+            "longitude": 22.0044228
+        },
+        "type": "thawer",
+        "owner": "Dazzlesphere",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0029",
+        "location": {
+            "latitude": -41.277848,
+            "longitude": 174.7763921
+        },
+        "type": "thawer",
+        "owner": "Kare",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0030",
+        "location": {
+            "latitude": 30.3537023,
+            "longitude": 31.2020516
+        },
+        "type": "thawer",
+        "owner": "Edgeblab",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0031",
+        "location": {
+            "latitude": 34.814591,
+            "longitude": 109.629628
+        },
+        "type": "thawer",
+        "owner": "Centimia",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0032",
+        "location": {
+            "latitude": 59.9381414,
+            "longitude": 10.7652478
+        },
+        "type": "thawer",
+        "owner": "Katz",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0033",
+        "location": {
+            "latitude": 45.26025,
+            "longitude": 38.1335101
+        },
+        "type": "thawer",
+        "owner": "Flipstorm",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0034",
+        "location": {
+            "latitude": 8.7078954,
+            "longitude": -76.0391909
+        },
+        "type": "thawer",
+        "owner": "Realbuzz",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0035",
+        "location": {
+            "latitude": 39.45978,
+            "longitude": 21.6225718
+        },
+        "type": "thawer",
+        "owner": "Riffwire",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0036",
+        "location": {
+            "latitude": -38.9833,
+            "longitude": -72.6417312
+        },
+        "type": "thawer",
+        "owner": "Camimbo",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0037",
+        "location": {
+            "latitude": 41.3053973,
+            "longitude": 24.8927934
+        },
+        "type": "thawer",
+        "owner": "Aibox",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0038",
+        "location": {
+            "latitude": 27.318852,
+            "longitude": 115.444319
+        },
+        "type": "thawer",
+        "owner": "Yodo",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0039",
+        "location": {
+            "latitude": -9.906,
+            "longitude": 124.5313
+        },
+        "type": "thawer",
+        "owner": "Voomm",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0040",
+        "location": {
+            "latitude": -19.6824436,
+            "longitude": -44.890204
+        },
+        "type": "thawer",
+        "owner": "Thoughtbridge",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0041",
+        "location": {
+            "latitude": 57.0473929,
+            "longitude": 44.8980984
+        },
+        "type": "thawer",
+        "owner": "Cogibox",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0042",
+        "location": {
+            "latitude": 14.1929998,
+            "longitude": 121.1317352
+        },
+        "type": "thawer",
+        "owner": "Eabox",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0043",
+        "location": {
+            "latitude": 60.0750723,
+            "longitude": 23.687553
+        },
+        "type": "thawer",
+        "owner": "Layo",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0044",
+        "location": {
+            "latitude": -1.079239,
+            "longitude": 102.969002
+        },
+        "type": "thawer",
+        "owner": "Jetpulse",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0045",
+        "location": {
+            "latitude": 10.6797099,
+            "longitude": 122.4163734
+        },
+        "type": "thawer",
+        "owner": "Voonix",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0046",
+        "location": {
+            "latitude": 40.2487413,
+            "longitude": 72.1297653
+        },
+        "type": "thawer",
+        "owner": "Browsecat",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0047",
+        "location": {
+            "latitude": 41.356361,
+            "longitude": 82.63142
+        },
+        "type": "thawer",
+        "owner": "Topiczoom",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0048",
+        "location": {
+            "latitude": 29.985295,
+            "longitude": 122.207215
+        },
+        "type": "thawer",
+        "owner": "Skilith",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0049",
+        "location": {
+            "latitude": 30.807667,
+            "longitude": 108.408661
+        },
+        "type": "thawer",
+        "owner": "Agimba",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0050",
+        "location": {
+            "latitude": 49.4753404,
+            "longitude": 83.142888
+        },
+        "type": "thawer",
+        "owner": "Eazzy",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0051",
+        "location": {
+            "latitude": 60.0209443,
+            "longitude": 44.9318159
+        },
+        "type": "thawer",
+        "owner": "Browseblab",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0052",
+        "location": {
+            "latitude": 59.3257766,
+            "longitude": 18.0470069
+        },
+        "type": "thawer",
+        "owner": "Mudo",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0053",
+        "location": {
+            "latitude": 28.533752,
+            "longitude": 100.270651
+        },
+        "type": "thawer",
+        "owner": "Dynabox",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0054",
+        "location": {
+            "latitude": 25.112046,
+            "longitude": 99.161761
+        },
+        "type": "thawer",
+        "owner": "Flipbug",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0055",
+        "location": {
+            "latitude": 60.6847164,
+            "longitude": 25.8332761
+        },
+        "type": "thawer",
+        "owner": "Feedfire",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0056",
+        "location": {
+            "latitude": 41.046959,
+            "longitude": -8.6423484
+        },
+        "type": "thawer",
+        "owner": "Ozu",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0057",
+        "location": {
+            "latitude": 39.8502497,
+            "longitude": 116.2190658
+        },
+        "type": "thawer",
+        "owner": "Yozio",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0058",
+        "location": {
+            "latitude": 29.205856,
+            "longitude": 117.11078
+        },
+        "type": "thawer",
+        "owner": "Fiveclub",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0059",
+        "location": {
+            "latitude": 53.4413995,
+            "longitude": 19.0963213
+        },
+        "type": "thawer",
+        "owner": "Lazz",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0060",
+        "location": {
+            "latitude": 39.50725,
+            "longitude": 112.083556
+        },
+        "type": "thawer",
+        "owner": "Jabberbean",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0061",
+        "location": {
+            "latitude": -7.9655412,
+            "longitude": 110.6008827
+        },
+        "type": "thawer",
+        "owner": "Dabtype",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0062",
+        "location": {
+            "latitude": 48.7803815,
+            "longitude": 2.4549884
+        },
+        "type": "thawer",
+        "owner": "Jabberbean",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0063",
+        "location": {
+            "latitude": -6.3279641,
+            "longitude": 106.8501157
+        },
+        "type": "thawer",
+        "owner": "Topiclounge",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0064",
+        "location": {
+            "latitude": 58.9015864,
+            "longitude": 5.7123282
+        },
+        "type": "thawer",
+        "owner": "Browsedrive",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0065",
+        "location": {
+            "latitude": 44.0088432,
+            "longitude": 39.192149
+        },
+        "type": "thawer",
+        "owner": "Mynte",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0066",
+        "location": {
+            "latitude": 33.6883392,
+            "longitude": 130.7171244
+        },
+        "type": "thawer",
+        "owner": "Meevee",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0067",
+        "location": {
+            "latitude": 50.1987725,
+            "longitude": 39.5632497
+        },
+        "type": "thawer",
+        "owner": "Quatz",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0068",
+        "location": {
+            "latitude": 28.615201,
+            "longitude": 89.493117
+        },
+        "type": "thawer",
+        "owner": "Twimbo",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0069",
+        "location": {
+            "latitude": -5.5775197,
+            "longitude": 12.1927103
+        },
+        "type": "thawer",
+        "owner": "Lazz",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0070",
+        "location": {
+            "latitude": 31.5655844,
+            "longitude": 73.170416
+        },
+        "type": "thawer",
+        "owner": "Realbridge",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0071",
+        "location": {
+            "latitude": 42.83528,
+            "longitude": 22.65167
+        },
+        "type": "thawer",
+        "owner": "Dabshots",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0072",
+        "location": {
+            "latitude": 38.6390583,
+            "longitude": 22.5927946
+        },
+        "type": "thawer",
+        "owner": "Livefish",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0073",
+        "location": {
+            "latitude": 50.1617318,
+            "longitude": 16.9473457
+        },
+        "type": "thawer",
+        "owner": "Dablist",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0075",
+        "location": {
+            "latitude": 40.570338,
+            "longitude": 116.554665
+        },
+        "type": "thawer",
+        "owner": "Eadel",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0076",
+        "location": {
+            "latitude": 31.385848,
+            "longitude": 94.427663
+        },
+        "type": "thawer",
+        "owner": "Bluejam",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0077",
+        "location": {
+            "latitude": 41.8760133,
+            "longitude": 72.9401509
+        },
+        "type": "thawer",
+        "owner": "Dabtype",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0078",
+        "location": {
+            "latitude": 38.914003,
+            "longitude": 121.614682
+        },
+        "type": "thawer",
+        "owner": "Feedfish",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0079",
+        "location": {
+            "latitude": 49.9354529,
+            "longitude": 18.9773045
+        },
+        "type": "thawer",
+        "owner": "Kaymbo",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0080",
+        "location": {
+            "latitude": 55.5480165,
+            "longitude": 13.931553
+        },
+        "type": "thawer",
+        "owner": "Topdrive",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0081",
+        "location": {
+            "latitude": 29.7286909,
+            "longitude": 115.9990815
+        },
+        "type": "thawer",
+        "owner": "Tagpad",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0082",
+        "location": {
+            "latitude": -7.24562,
+            "longitude": 177.14511
+        },
+        "type": "thawer",
+        "owner": "Camimbo",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0083",
+        "location": {
+            "latitude": 29.50393,
+            "longitude": 117.976899
+        },
+        "type": "thawer",
+        "owner": "Meejo",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0084",
+        "location": {
+            "latitude": 5.9840985,
+            "longitude": 116.0761121
+        },
+        "type": "thawer",
+        "owner": "Vidoo",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0085",
+        "location": {
+            "latitude": 29.724692,
+            "longitude": 113.900628
+        },
+        "type": "thawer",
+        "owner": "Geba",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0086",
+        "location": {
+            "latitude": 33.0726276,
+            "longitude": 131.8737341
+        },
+        "type": "thawer",
+        "owner": "Viva",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0087",
+        "location": {
+            "latitude": 22.9171031,
+            "longitude": 57.536292
+        },
+        "type": "thawer",
+        "owner": "Minyx",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0088",
+        "location": {
+            "latitude": 14.2524816,
+            "longitude": 100.7323332
+        },
+        "type": "thawer",
+        "owner": "Quimba",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0089",
+        "location": {
+            "latitude": 58.8144355,
+            "longitude": 40.7334111
+        },
+        "type": "thawer",
+        "owner": "Twitterbeat",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0090",
+        "location": {
+            "latitude": -13.92399,
+            "longitude": -71.69326
+        },
+        "type": "thawer",
+        "owner": "Camido",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0091",
+        "location": {
+            "latitude": 36.070149,
+            "longitude": 101.931253
+        },
+        "type": "thawer",
+        "owner": "Edgewire",
+        "status": "active"
+    },
+    {
+        "id": "vtu-0092",
+        "location": {
+            "latitude": -7.9675395,
+            "longitude": 112.7032945
+        },
+        "type": "thawer",
+        "owner": "Mybuzz",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0093",
+        "location": {
+            "latitude": 28.685085,
+            "longitude": 115.899262
+        },
+        "type": "thawer",
+        "owner": "Zoomzone",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0094",
+        "location": {
+            "latitude": 16.90641,
+            "longitude": 44.27622
+        },
+        "type": "thawer",
+        "owner": "Mynte",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0095",
+        "location": {
+            "latitude": 9.338682,
+            "longitude": 123.291063
+        },
+        "type": "thawer",
+        "owner": "Linklinks",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0096",
+        "location": {
+            "latitude": 7.5670301,
+            "longitude": 99.745565
+        },
+        "type": "thawer",
+        "owner": "Mynte",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0097",
+        "location": {
+            "latitude": 52.5094874,
+            "longitude": 16.7474972
+        },
+        "type": "thawer",
+        "owner": "Babblestorm",
+        "status": "inactive"
+    },
+    {
+        "id": "vtu-0098",
+        "location": {
+            "latitude": 23.788392,
+            "longitude": 114.74638
+        },
+        "type": "thawer",
+        "owner": "Roombo",
+        "status": "error"
+    },
+    {
+        "id": "vtu-0099",
+        "location": {
+            "latitude": -3.185681,
+            "longitude": 104.0362587
+        },
+        "type": "thawer",
+        "owner": "Centidel",
+        "status": "inactive"
+    }
+]

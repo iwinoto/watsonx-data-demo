@@ -1,0 +1,57 @@
+{
+  "id": 617935,
+  "num_rows": 291,
+  "file_format": "json",
+  "name": "devices",
+  "array": true,
+  "columns": [
+    {
+      "name": "id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "device_ids",
+      "column": null,
+      "selectionStyle": "sequential",
+      "distribution": null,
+      "formula": null
+    },
+    {
+      "name": "location.latitude",
+      "null_percentage": 0,
+      "type": "Latitude",
+      "formula": null
+    },
+    {
+      "name": "location.longitude",
+      "null_percentage": 0,
+      "type": "Longitude",
+      "formula": null
+    },
+    {
+      "name": "type",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "if id.match?('vtu') then 'thawer' elsif id.match?('vcu') then 'freezer' elsif id.match?('vsu') then 'sensor' end",
+      "formula": null
+    },
+    {
+      "name": "owner",
+      "null_percentage": 0,
+      "type": "Company Name",
+      "formula": null
+    },
+    {
+      "name": "status",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "active",
+        "inactive",
+        "error"
+      ],
+      "selectionStyle": "random",
+      "distribution": null,
+      "formula": null
+    }
+  ]
+}

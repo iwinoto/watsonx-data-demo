@@ -1,0 +1,71 @@
+{
+  "id": 617932,
+  "num_rows": 1000,
+  "file_format": "csv",
+  "name": "demo.events",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "id",
+      "null_percentage": 0,
+      "type": "Row Number",
+      "formula": null
+    },
+    {
+      "name": "timestamp",
+      "null_percentage": 0,
+      "type": "Datetime",
+      "min": "04/09/2023",
+      "max": "04/09/2024",
+      "format": "%Y-%m-%dT%H:%M:%SZ",
+      "formula": null
+    },
+    {
+      "name": "source_id",
+      "null_percentage": 0,
+      "type": "Regular Expression",
+      "value": "v[cts]u-00\\d{2}",
+      "formula": null
+    },
+    {
+      "name": "data_point",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "temperature"
+      ],
+      "selectionStyle": "random",
+      "distribution": null,
+      "formula": null
+    },
+    {
+      "name": "data_unit",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "celsius"
+      ],
+      "selectionStyle": "random",
+      "distribution": null,
+      "formula": null
+    },
+    {
+      "name": "data_type",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "foat"
+      ],
+      "selectionStyle": "random",
+      "distribution": null,
+      "formula": null
+    },
+    {
+      "name": "data",
+      "null_percentage": 0,
+      "type": "Regular Expression",
+      "value": "-[1-3]\\d.\\d",
+      "formula": null
+    }
+  ]
+}
