@@ -1,71 +1,67 @@
-## client demo preparation
-Use watsonx.data cosole, *Infrastructure manager* panel, to create a new catalog called `demo_data` associated with the `demo` bucket.
-
-Connect the `demo_data` catalog to the `presto` engine.
-
-Start `presto-cli` using the `demo_data` catalog.
-
-Create a new schema based on the bucket / path of `demo/devices`.
-```
-./presto-cli --catalog demo_data
-
-create schema if not exists demo_data.devices
-  with (location='s3a://demo/devices');
-
-show schemas;
-
-create table demo_data.devices.device_registry (id varchar, location_latitude varchar, location_longitude varchar, type varchar, owner varchar, status varchar) with (format = 'CSV', external_location='s3a://demo/devices', skip_header_line_count=1);
-
-select * from demo_data.devices.device_registry;
-
-use demo;
-
-show tables;
-```
-
-## Try next
-Make another bucket for demo with iceberg catalog to allow richer data ingest.
-
-Create new bucket called `demo_iceberg_bucket`
-
-Copy `demo.devices.csv` to `demo_iceberg_bucket/devices`
-
-Register the bucket in *Infrastructure Manager* with catalog name `demo_iceberg`
-
-Use modified commands above to ceate schema and ingest data.
-
-* hypothesis
-  * data types are preserved
-  * csv header line is not ingested
-* risk
-  * may need to convert CSV to iceberg table format. Examples for presto iceberg connector only shows *ORC* format. https://www.ibm.com/docs/en/watsonx/watsonxdata/1.0.x?topic=data-ingesting-from-object-storage-bucket
-  * creating from hive data where all data types are VARCHAR means that we still do not get datatypes in the iceberg format. However we can alter the schema, so that may help.
-  
-
-## create table in iceberg_data catalog ON paquet file in object store  
-Data is in a CSV file. Use *duckdb* to import CSV file into a table and then copy the table to a *parquet* file.
+## client demo
+### data preparation
+Data is in a CSV file. For analysis in the lakehouse, it is recommended to use data in a large data efficient format like parquet. Use *duckdb* to import CSV file into a table and then copy the table to a *parquet* file. *duckdb* is not approved for use within IBM, so this conversion was done off IBM resources. However, the commands to perform the conversion are documented below.
 ```
 < from mac air>
 ```
 
+### Demo commands
+Back on IBM resources...
 
-Upload parquet file to object store
-```
-mc cp data/demo.device_registry_csv.parquet watsonx-minio/iceberg-bucket/devices/device_registry.parquet
-```
+1. Upload parquet file to object store
+    ```
+    mc cp data/demo.device_registry_csv.parquet watsonx-minio/demo/devices/device_registry.parquet
+    ```
 
-Create schema in `iceberg_data` catalog connected to object store bucket folder
-```
-create schema if not exists iceberg_data.devices with (location='s3a://iceberg-bucket/devices');
-show schemas in iceberg_data;
-```
+2. Use watsonx.data cosole, *Infrastructure manager* panel, to create a new object storage catalogue called `demo_data` connected to the `demo` bucket. Associate the new storage with an Apache Hive catalogue.
 
-Create table in catalog schema on parquet file in object store
-```
-create table iceberg_data.devices.device_registry (id varchar, location_latitude double, location_longitude double, type varchar, owner varchar, status varchar) with (format = 'PARQUET', location='s3a://iceberg-bucket/devices/device_registry.parquet');
+3. Connect the `demo_data` catalog to the `presto` engine.
 
-describe iceberg_data.devices.device_registry;
+4. Start `presto-cli`.
+    ```
+    cd ~/dev/watsonx.data
+    ibm-lh-dev/bin/presto-cli
+    ```
 
-select * from iceberg_data.devices.device_registry;
-```
+5. Create a new schema based on the bucket / path of `demo/devices`.
+    ```
+    create schema if not exists demo_data.devices
+      with (location='s3a://demo/devices');
+
+    show schemas;
+    ```
+
+6. Create a table in presto based on the device registry
+    ```
+    create table
+      demo_data.devices.device_registry (
+        id varchar,
+        location_latitude double,
+        location_longitude double,
+        type varchar,
+        owner varchar,
+        status varchar)
+      with (
+        format = 'PARQUET',
+        location='s3a://demo/devices/device_registry.parquet');
+
+    describe demo_data.devices.device_registry;
+
+    select * from demo_data.devices.device_registry;
+    ```
+
+7. Now can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
+    ```
+    SELECT device.id AS device_id,
+        event.timestamp AS timestamp,
+        event.data AS data,
+        event.data_point AS data_point,
+        device.owner AS device_owner,
+        device.status AS device_status
+      FROM demo.demo.events AS event,
+        hive_data.devices2.device_registry2 AS device
+      WHERE event.source_id = device.id
+        AND device.id = 'vcu-0010'
+      ORDER BY event.timestamp;
+    ```
 

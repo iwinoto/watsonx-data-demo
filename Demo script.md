@@ -35,7 +35,7 @@ A solution is needed to:
 * queries can combine data in the warehouse with the data in the lakehouse. This provides clients with complete flexibility in where they store their data.
 * Presto in watsonx.data can currently connect to IBM Db2, Netezza, Apache Kafka, Elasticsearch, MongoDB, MySQL, PostgreSQL, SAP HANA, SingleStore, Snowflake, SQL Server, Teradata, and others through a custom connector
 
-### Demonstrating how watsonx.data relieves the pain points
+### Script to demonstrate how watsonx.data relieves the pain points
 #### Preparation
 * create watsonx.demo.events table in postgreSQL
   * create the `watsonx` database
@@ -45,6 +45,12 @@ A solution is needed to:
   $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -e -c 'CREATE DATABASE watsonx'
   $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -d watsonx -e -f ./data/client\ demo-create\ events\ table.sql
   ```
+* Data to be used for hive demonstration is in a CSV file. For analysis in the lakehouse, it is recommended to use data in a large data efficient format like parquet. *duckdb* can be used to import CSV file into a table and then copy the table to a *parquet* format file.
+  *duckdb* is not approved for use within IBM, so this conversion was done off IBM resources. However, the commands to perform the conversion are documented below.
+  ```
+  < from mac air>
+  ```
+
 * create demo bucket in minio
   * retrieve minio S3 access key (user name)
     ```
@@ -71,86 +77,125 @@ A solution is needed to:
     ```
     mc alias set watsonx-minio http://localhost:9000 261876628da42a95863235df 50fe0a65d9e5bcbb3110124a
     ```
-  * Create the `demo-devices` bucket
+  * Create the `demo` bucket
     ```
-    mc mb watson-minio/demo-devices
+    mc mb watson-minio/demo
     ```
     Check that the bucket has been created
     ```
     mc ls watsonx-minio
     ```
-  * Copy `demo.devices.json` file to the `demo-devices bucket`
+  * Copy `demo.device_registry_.parquet` file to the `demo bucket` under a folder called `devices`
     ```
-    mc cp ./data/demo.devices.json watsonx-minio/demo-devices/devices.json
-    ```
-    data file should be visible through minio console and from the command line
-    ```
+    mc cp data/demo.device_registry_csv.parquet watsonx-minio/demo/devices/device_registry.parquet
     mc ls watsonx-minio/demo-devices
     ```
-* Explore watsonx.data lakehouse console
-  * open watsonx.data [console](https://localhost:9443). It may be necessary to accept the unsafe location.
-  * login in with user `ibmlhadmin` and password `password`
-* Add a catalog entry for postgreSQL to view the device events data
-* Add an hive catalog entry to view the device data from minio.
-  * start the presto CLI
-    ```
-    ~/dev/watsonx.data/ibm-lh-dev/bin/presto-cli --catalog hive_data
-    ```
-  * Create a schema for the demo data called `demo`
-    ```
-    create schema if not exists demo with (location='s3a://hive-bucket/demo');
-    ```
-  * confirm the schema was created
-    ```
-    show schemas;
-    ```
-  * create a new table to hold devices information
-    ```
-    create table demo.devices (id varchar, location.latitude float, location.longitude float, owner varchar, status varchar);
-    ```
-  * confirm the table was created
-    ```
-    show tables from demo;
-    ```
 
-#### Script
-* Get the PostgreSQL server password with this command `docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//'`
-* run select query on `watsonx.demo.events`
-    ```
-    PGPASSWORD=*<Password from step previous step>* && /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U admin -d watsonx -c "SELECT * from demo.events WHERE source_id LIKE 'vtu-%'"
-    ```
-* point out data from many devices over time. For demo purposes, there is only temperature data, but schema can accommodate data of infinite types from infinite sources.
-* data scientist want to apply machine learning models against this data
-* we'll import this data into watsonx.data
-* First we need to discover important information about the PostgreSQL installation
-  1. open a command terminal
-  2. enter `docker network inspect ibm-lh-network | jq -r '.[0].Containers | map({"Name" : .Name, "IP" : .IPv4Address}).[] | select( .Name == "ibm-lh-postgres")'`
-  3. Note the value for `IP`. This is the IP address for the container running the PostgreSQL server.
-* Add the PostgreSQL database to the lakehouse
-  1. Select the *Infrastructure Manager*
-  2. Click *Add Component*, select *Add Database*
-  3. In the *Add Database* dialogue enter the following
-     *  Database type: *PostgreSQL* (it can be found under the From Others section)
-     *  Database name: *demo*
-     *  Display name: *PostgreSQLDB*
-     *  Hostname: *<IP Address from step 3>*
-     *  Port: *5432*
-     *  Username: *admin*
-     *  Password: *<Password from step 4>*
-     *  Catalog name: pgcatalog
-* Select *Data Manager* from the left-side menu
-* Expand *pgcatalog*
-* Show events table information, including schema
-* Show sample table data for events table.
-* We now have a copy of the *demo.events* data that can be analysed without impacting production performance. This was created with the open source Presto engine.
-* In reality, an enterprise would create a schema that is a combination of data from different data sources, which may be different technologies.
-* For example, device data may come from an object store.
+#### Demonstration
+* Explore watsonx.data lakehouse console
+  1. open watsonx.data [console](https://localhost:9443). It may be necessary to accept the unsafe location.
+  2. login in with user `ibmlhadmin` and password `password`
+
+* Explore postgreSQL to view the device events data
+  * Get the PostgreSQL server password with this command `docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//'`
+  * run select query on `watsonx.demo.events`
+      ```
+      PGPASSWORD=*<Password from step previous step>* && /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U admin -d watsonx -c "SELECT * from demo.events WHERE source_id LIKE 'vtu-%'"
+      ```
+  * point out data from many devices over time. For demo purposes, there is only temperature data, but schema can accommodate data of infinite types from infinite sources.
+  * data scientist want to apply machine learning models against this data. We can make this data accessible through the watsonx.data lakehouse for analysis.
+
+* Add postgreSQL catalogue to watsonx.data lake house
+  1. First we need to discover important information about the PostgreSQL installation
+    1. open a command terminal
+    2. enter `docker network inspect ibm-lh-network | jq -r '.[0].Containers | map({"Name" : .Name, "IP" : .IPv4Address}).[] | select( .Name == "ibm-lh-postgres")'`
+    3. Note the value for `IP`. This is the IP address for the container running the PostgreSQL server.
+
+  2. Add the PostgreSQL database to the lakehouse
+    1. Select the *Infrastructure Manager*
+    2. Click *Add Component*, select *Add Database*
+    3. In the *Add Database* dialogue enter the following
+       *  Database type: *PostgreSQL* (it can be found under the From Others section)
+       *  Database name: *demo*
+       *  Display name: *PostgreSQLDB*
+       *  Hostname: *<IP Address from step 3>*
+       *  Port: *5432*
+       *  Username: *admin*
+       *  Password: *<Password from step 4>*
+       *  Catalog name: pgcatalog
+
+  3. Select *Data Manager* from the left-side menu
+  4. Expand *pgcatalog*
+  5. Show events table information, including schema
+  6. Show sample table data for events table.
+  7. We now have a copy of the *demo.events* data that can be analysed without impacting production performance. This was created with the open source Presto engine.
+  8. In reality, an enterprise would create a schema that is a combination of data from different data sources, which may be different technologies.
+  9. For example, device data may come from an object store.
+
+* Explore object store, *minio*
+  1. open minio console and show the buckets including the `demo` bucket with the parquet file of devices. Can also show the CSV source for this file in an IDE.
+
+* Add a hive catalog called `demo_data` to view the device data from minio.
+
+  1. Use watsonx.data cosole, *Infrastructure manager* panel, to add a new object storage location connected to the `demo` bucket. Associate the new storage with an Apache Hive catalogue called `demo_data`.
+
+  2. Connect the `demo_data` catalog to the `presto` engine.
+
+  3. Start the presto CLI
+      ```
+      ~/dev/watsonx.data/ibm-lh-dev/bin/presto-cli
+      ```
+
+  4. Create a schema called `devices` in the `demo_data` catalogue. The schema will be physicall located in the object storage demo bucket This is where the device registry table will exist.
+      ```
+      create schema if not exists demo_data.devices
+        with (location='s3a://demo/devices');
+
+      show schemas;
+      ```
+    
+  5. Create a table in presto based on the device registry
+      ```
+      create table
+        demo_data.devices.device_registry (
+          id varchar,
+          location_latitude double,
+          location_longitude double,
+          type varchar,
+          owner varchar,
+          status varchar)
+        with (
+          format = 'PARQUET',
+          location='s3a://demo/devices/device_registry.parquet');
+
+      describe demo_data.devices.device_registry;
+
+      select * from demo_data.devices.device_registry;
+      ```
+
+  6. Now can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
+      ```
+      SELECT device.id AS device_id,
+          event.timestamp AS timestamp,
+          event.data AS data,
+          event.data_point AS data_point,
+          device.owner AS device_owner,
+          device.status AS device_status
+        FROM demo.demo.events AS event,
+          hive_data.devices2.device_registry2 AS device
+        WHERE event.source_id = device.id
+          AND device.id = 'vcu-0010'
+        ORDER BY event.timestamp;
+      ```
+      This can be used to create another table in the lake-house (using the Create Table As Select, CTAS, pattern). This can be further analysed or used as input to machine learning models for AI use cases.
 
 ## Client "call to action"
+Clients can start with the developer edition of watsonx.data. This can be run locally using container images and is used in this demonstration.
 
+Start with a PoC using the developer edition to test analysis use cases with large datasets. Engage IBM to identify suitable use cases and let IBM help you successfully implement a data lake house to solve your large data analytic problems.
 
 ## Notes
-### Running Watsonx.data developer edition locally
+### Running watsonx.data developer edition locally
 Watsonx.data can be run as containers on podman. Instructions are in the [wastsonx.data documentation](https://www.ibm.com/docs/en/watsonxdata/1.1.x?topic=edition-installing-watsonxdata-developer-version).
 
 There are issues with the instructions and scripts that need to be resolved.
@@ -211,6 +256,8 @@ $ PGPASSWORD=password /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U u
 ```
 
 ### Tesing DB2 locally
+**Not successful**
+
 Run DB2 Community edition in a container. This [article](https://www.ibm.com/docs/en/db2/11.5?topic=system-windows) describes how. The article uses docker, but can also be run in podman. Just replace `docker` command with `podman`.
 
 For work around to issues with MacOS Silicon, see [this thread](https://community.ibm.com/community/user/datamanagement/discussion/db2-luw-115xx-mac-m1-ready#bm77e71277-b647-4220-96ca-2f4606270808)
@@ -225,8 +272,14 @@ $ docker run -h db2server --name db2server --restart=always --detach --privilege
 ```
 
 ### Demo data
+Demo data is created using mockaroo.
+
 #### Device events
-`demo.events.csv`
+* mockaroo schema : `data/demo.events.schema.json`
+
+Creates data in CSV format. The data simulates temperature reading events from devices. Devices are identified via the `source_id` column. The `source_id` column should be a foreign key to the devices data.
 
 #### Devices
-`demo.devices.json`
+* mockaroo schema : `data/demo.devices.schema.json`
+
+Creates data in CSV or JSON format. The data simulates a registry of devices keyed by `id` which is a foreign key to `source_id` in the `events` data.
