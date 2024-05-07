@@ -69,11 +69,11 @@ A solution is needed to:
           'owner': 'VARCHAR',
           'status': 'VARCHAR'});
 
-    show tables;
+    SHOW TABLES;
 
-    describe device_registry
+    DESCRIBE device_registry;
 
-    select * from device_registry
+    SELECT * FROM device_registry;
     ```
 
   3. Create a parquet file from the table
@@ -127,26 +127,26 @@ A solution is needed to:
     ```
 
 #### Demonstration
-* Explore watsonx.data lakehouse console
-  1. open watsonx.data [console](https://localhost:9443). It may be necessary to accept the unsafe location.
+* Explore *watsonx.data* lakehouse console
+  1. open *watsonx.data* [console](https://localhost:9443). It may be necessary to accept the unsafe location.
   2. login in with user `ibmlhadmin` and password `password`
 
-* Explore postgreSQL to view the device events data
-  * Get the PostgreSQL server password with this command `docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//'`
+* Explore *postgreSQL* to view the device events data
+  * Get the *PostgreSQL* server password with this command `docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//'`
   * run select query on `watsonx.demo.events`
       ```
       PGPASSWORD=*<Password from step previous step>* && /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U admin -d watsonx -c "SELECT * from demo.events WHERE source_id LIKE 'vtu-%'"
       ```
   * point out data from many devices over time. For demo purposes, there is only temperature data, but schema can accommodate data of infinite types from infinite sources.
-  * data scientist want to apply machine learning models against this data. We can make this data accessible through the watsonx.data lakehouse for analysis.
+  * data scientist want to apply machine learning models against this data. We can make this data accessible through the *watsonx.data* lake-house for analysis.
 
-* Add postgreSQL catalogue to watsonx.data lake house
-  1. First we need to discover important information about the PostgreSQL installation
+* Add *postgreSQL* catalogue to *watsonx.data* lake-house
+  1. First we need to discover important information about the *PostgreSQL* installation
     1. open a command terminal
     2. enter `docker network inspect ibm-lh-network | jq -r '.[0].Containers | map({"Name" : .Name, "IP" : .IPv4Address}).[] | select( .Name == "ibm-lh-postgres")'`
     3. Note the value for `IP`. This is the IP address for the container running the PostgreSQL server.
 
-  2. Add the PostgreSQL database to the lakehouse
+  2. Add the *PostgreSQL* database to the lake-house
     1. Select the *Infrastructure Manager*
     2. Click *Add Component*, select *Add Database*
     3. In the *Add Database* dialogue enter the following
@@ -157,21 +157,22 @@ A solution is needed to:
        *  Port: *5432*
        *  Username: *admin*
        *  Password: *<Password from step 4>*
-       *  Catalog name: pgcatalog
+       *  Catalog name: *pgcatalog*
 
   3. Select *Data Manager* from the left-side menu
   4. Expand *pgcatalog*
   5. Show events table information, including schema
   6. Show sample table data for events table.
   7. We now have a copy of the *demo.events* data that can be analysed without impacting production performance. This was created with the open source Presto engine.
-  8. In reality, an enterprise would create a schema that is a combination of data from different data sources, which may be different technologies.
-  9. For example, device data may come from an object store.
+      
+      In reality, an enterprise would create a schema that is a combination of data from different data sources, which may be different technologies.
+      
+      For example, device data may come from an object store.
 
 * Explore object store, *minio*
   1. open minio console and show the buckets including the `demo` bucket with the parquet file of devices. Can also show the CSV source for this file in an IDE.
 
 * Add a hive catalog called `demo_data` to view the device data from minio.
-
   1. Use watsonx.data cosole, *Infrastructure manager* panel, to add a new object storage location connected to the `demo` bucket. Associate the new storage with an Apache Hive catalogue called `demo_data`.
 
   2. Connect the `demo_data` catalog to the `presto` engine.
@@ -191,7 +192,7 @@ A solution is needed to:
     
   5. Create a table in presto based on the device registry
       ```
-      create table
+      CREATE TABLE
         demo_data.devices.device_registry (
           id varchar,
           location_latitude double,
@@ -199,16 +200,16 @@ A solution is needed to:
           type varchar,
           owner varchar,
           status varchar)
-        with (
+        WITH (
           format = 'PARQUET',
           location='s3a://demo/devices/device_registry.parquet');
 
-      describe demo_data.devices.device_registry;
+      DESCRIBE demo_data.devices.device_registry;
 
-      select * from demo_data.devices.device_registry;
+      SELECT * FROM demo_data.devices.device_registry;
       ```
 
-  6. Now can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
+  6. Now a user can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
       ```
       SELECT device.id AS device_id,
           event.timestamp AS timestamp,
@@ -262,33 +263,6 @@ There are issues with the instructions and scripts that need to be resolved.
   ## diag run mode so developer can access postgres, minio and hive containers from host.
   export LH_RUN_MODE=diag
   ```
-
-### Testing PostgreSQL locally
-For local testing of postgreSQL, usd podman to run a container with postgreSQL. This can be used to test the creation of demo databases.
-
-Refer to [article](https://medium.com/@pawanpg0963/run-postgresql-with-podman-as-docker-container-86ad392349d1)
-
-```
-#if podman machine does not already exist
-$ podman machine init
-
-$ podman machine start
-```
-
-Start postgreSQL container
-
-```
-$ podman pull postgres
-$ mkdir -p ./data
-$ podman run --name postgres -e POSTGRES_USER=username -e
-POSTGRES_PASSWORD=password -v ./data -p 5432:5432 -d postgres
-
-```
-
-Run postgreSQL client from terminal:
-```
-$ PGPASSWORD=password /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username
-```
 
 ### Tesing DB2 locally
 **Not successful**
