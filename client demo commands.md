@@ -42,6 +42,30 @@ Use modified commands above to ceate schema and ingest data.
   * creating from hive data where all data types are VARCHAR means that we still do not get datatypes in the iceberg format. However we can alter the schema, so that may help.
   
 
-  
+## create table in iceberg_data catalog ON paquet file in object store  
+Data is in a CSV file. Use *duckdb* to import CSV file into a table and then copy the table to a *parquet* file.
+```
+< from mac air>
+```
 
+
+Upload parquet file to object store
+```
+mc cp data/demo.device_registry_csv.parquet watsonx-minio/iceberg-bucket/devices/device_registry.parquet
+```
+
+Create schema in `iceberg_data` catalog connected to object store bucket folder
+```
+create schema if not exists iceberg_data.devices with (location='s3a://iceberg-bucket/devices');
+show schemas in iceberg_data;
+```
+
+Create table in catalog schema on parquet file in object store
+```
+create table iceberg_data.devices.device_registry (id varchar, location_latitude double, location_longitude double, type varchar, owner varchar, status varchar) with (format = 'PARQUET', location='s3a://iceberg-bucket/devices/device_registry.parquet');
+
+describe iceberg_data.devices.device_registry;
+
+select * from iceberg_data.devices.device_registry;
+```
 
