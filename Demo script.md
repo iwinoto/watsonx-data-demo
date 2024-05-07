@@ -40,16 +40,51 @@ A solution is needed to:
 * create watsonx.demo.events table in postgreSQL
   * create the `watsonx` database
   * create the `watsonx.demo.events` table, populate with data and run a sample query.
-  ```
-  $ export PGPASSWORD=password
-  $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -e -c 'CREATE DATABASE watsonx'
-  $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -d watsonx -e -f ./data/client\ demo-create\ events\ table.sql
-  ```
+    ```
+    $ export PGPASSWORD=password
+    $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -e -c 'CREATE DATABASE watsonx'
+    $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -d watsonx -e -f ./data/client\ demo-create\ events\ table.sql
+    ```
+
 * Data to be used for hive demonstration is in a CSV file. For analysis in the lakehouse, it is recommended to use data in a large data efficient format like parquet. *duckdb* can be used to import CSV file into a table and then copy the table to a *parquet* format file.
   *duckdb* is not approved for use within IBM, so this conversion was done off IBM resources. However, the commands to perform the conversion are documented below.
-  ```
-  < from mac air>
-  ```
+
+  1. start *duckdb* specifying `demo.devices.duckdb` as the file to persist data to.
+    ```
+    duckdb demo.devices.duckdb
+    ```
+
+  2. Create a table in duckdb from the CSV file containing mock data. The `columns` option specifies how *duckdb* should convert CSV text data to data types.
+    ```
+    CREATE TABLE device_registry AS
+      SELECT *
+      FROM read_csv(
+        'demo.devices.csv',
+        header=true,
+        columns={
+          'id': 'VARCHAR',
+          'location_latitude': 'DOUBLE',
+          'location_longitude': 'DOUBLE',
+          'type': 'VARCHAR',
+          'owner': 'VARCHAR',
+          'status': 'VARCHAR'});
+
+    show tables;
+
+    describe device_registry
+
+    select * from device_registry
+    ```
+
+  3. Create a parquet file from the table
+    ```
+    COPY device_registry_csv TO 'demo.device_registry_csv.parquet' (format parquet);
+    ```
+  
+  4. Quit *duckdb*
+    ```
+    .quit
+    ```
 
 * create demo bucket in minio
   * retrieve minio S3 access key (user name)
