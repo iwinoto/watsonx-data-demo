@@ -1,13 +1,11 @@
-# 6/03/2024
-## IBM watsonx.data for Technical Sales L3 - Lab Guide
+# IBM watsonx.data Demonstration
 
-## Stand and Deliver Demo
-### Client: Life Sciences organisation
+## Fictional Client: Life Sciences organisation
 A life sciences start-up. They have developed a cloud deployed software platform that controls the supply chain of biological material products including sperm and embryo. The supply chain collects biological material from donors. The material is frozen for transport. The frozen material is transported. At its first destination it may be stored or defrosted for further processing.
 
 In either case, the devices which perform the function to feeze or thaw the material collect data during the process. The data is stored on the platform in an RDBMS type data store. Sensor data attached to the material also collects environmental data as the material is transported or stored. Material environmental data is stored in the same RDBMS and the data from freezing and thawing devices.
 
-### Pain point
+## Pain point
 The enterprise would like to analyse the data collected to learn about the factors impacting material viability through it's lifecycle. This is **important** to feedback in to the freezing and thawing steps to maintain an improve material viability in all stages of handling and storage. The modelling used to analyse the data is not a pain point to the enterprise. What is a pain point is how the data is fed into the model efficiently and without impacting other critical business processes which rely on the data store.
 
 Because data is currently stored in RDBMS, it is challenging for Vitrafy to access the data without impacting platform performance. Additionally, analysis does not require access to realtime data as results are not impacted by the presence of the most recent data points.
@@ -23,7 +21,7 @@ A solution is needed to:
 * Moving data from OTLP stores to lake-houses can be time consuming and expensive. Also requires governance to maintain data currency
 * watsonx.data is an open lakehouse implementation that can solve these problems 
 
-### Watsonx.data value proposition
+## Watsonx.data value proposition
 * Modernise storage by moving data from on-line storage to data lake archive storage.
 * Data move can be either ad-hoc or scheduled.
 * Connects to S3 compliant low cost object store for data storage.
@@ -35,8 +33,8 @@ A solution is needed to:
 * queries can combine data in the warehouse with the data in the lakehouse. This provides clients with complete flexibility in where they store their data.
 * Presto in watsonx.data can currently connect to IBM Db2, Netezza, Apache Kafka, Elasticsearch, MongoDB, MySQL, PostgreSQL, SAP HANA, SingleStore, Snowflake, SQL Server, Teradata, and others through a custom connector
 
-### Script to demonstrate how watsonx.data relieves the pain points
-#### Preparation
+## Script to demonstrate how watsonx.data relieves the pain points
+### Preparation
 * create watsonx.demo.events table in postgreSQL
   * create the `watsonx` database
   * create the `watsonx.demo.events` table, populate with data and run a sample query.
@@ -126,7 +124,7 @@ A solution is needed to:
     mc ls watsonx-minio/demo-devices
     ```
 
-#### Demonstration
+### Demonstration
 * Explore *watsonx.data* lakehouse console
   1. open *watsonx.data* [console](https://localhost:9443). It may be necessary to accept the unsafe location.
   2. login in with user `ibmlhadmin` and password `password`
