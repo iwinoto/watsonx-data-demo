@@ -311,3 +311,19 @@ Creates data in CSV format. The data simulates temperature reading events from d
 * mockaroo schema : `data/demo.devices.schema.json`
 
 Creates data in CSV or JSON format. The data simulates a registry of devices keyed by `id` which is a foreign key to `source_id` in the `events` data.
+
+## Useful resources
+* Demo consoles
+  * [watsonx.data console](https://localhost:9443/)
+  * [minio console](http://localhost:9001)
+* S/W guidance
+  * [watsonx.data documentation](https://www.ibm.com/docs/en/watsonx/watsonxdata)
+  * [watsonx.data ingest data from object storage](https://www.ibm.com/docs/en/watsonx/watsonxdata/1.1.x?topic=SSDZ38_1.1.x/lh-console/topics/manual_ingest.htm)
+  * [minio client](https://min.io/docs/minio/macos)
+    * install with `brew install minio-mc`
+  * [duckdb data import](https://duckdb.org/docs/data/overview)
+  * [duckdb export to parquet](https://duckdb.org/docs/guides/file_formats/parquet_export)
+  * [Presto iceberb connector](https://prestodb.io/docs/current/connector/iceberg.html)
+  * [SQL data types](https://www.w3schools.com/sql/sql_datatypes.asp)
+  * [mockaroo for creating mock datasets](https://www.mockaroo.com/)
+
