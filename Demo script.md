@@ -35,13 +35,26 @@ A solution is needed to:
 
 ## Script to demonstrate how watsonx.data relieves the pain points
 ### Preparation
+* Set up *watsonx.data Developer Edition* according to [notes below](#running-watsonxdata-developer-edition-locally).
 * create watsonx.demo.events table in postgreSQL
-  * create the `watsonx` database
-  * create the `watsonx.demo.events` table, populate with data and run a sample query.
+  1. Retrieve the postgreSQL admin user password, and set to `PGPASSWORD` environment variable
     ```
-    $ export PGPASSWORD=password
-    $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -e -c 'CREATE DATABASE watsonx'
-    $ /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U username -d watsonx -e -f ./data/client\ demo-create\ events\ table.sql
+    export PGPASSWORD=$(docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//')
+    ```
+
+  2. create the `watsonx` database using postgreSQL CLI
+    ```
+    /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U admin -d postgres -e -c 'CREATE DATABASE watsonx'
+    ```
+  3. create the `watsonx.demo.events` table, populate with data and run a sample query.
+    ```
+    cd ./data
+
+    /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U admin -d watsonx -e -f client\ demo-create\ events\ table.sql
+    ```
+  4. Check that there is data in the table
+    ```
+    /opt/homebrew/opt/libpq/bin/psql -h localhost -p 5432 -U admin -d watsonx -c "SELECT * from demo.events WHERE source_id LIKE 'vsu-%' "
     ```
 
 * Data to be used for hive demonstration is in a CSV file. For analysis in the lakehouse, it is recommended to use data in a large data efficient format like parquet. *duckdb* can be used to import CSV file into a table and then copy the table to a *parquet* format file.
@@ -88,27 +101,24 @@ A solution is needed to:
   * retrieve minio S3 access key (user name)
     ```
     docker exec ibm-lh-presto printenv | grep LH_S3_ACCESS_KEY | sed 's/.*=//'
-    261876628da42a95863235df
     ```
-    Should return `261876628da42a95863235df`
   * Retrieve minio S3 secret key (password)
     ```
     docker exec ibm-lh-presto printenv | grep LH_S3_SECRET_KEY | sed 's/.*=//'
     ```
-    should return `50fe0a65d9e5bcbb3110124a`.
   * Make sure minio client alias is set up for watsonx docker environment. `mc alias list watson-minio` should return as below
     ```
     $ mc alias list watsonx-minio
     watsonx-minio
       URL       : http://localhost:9000
-      AccessKey : 261876628da42a95863235df
-      SecretKey : 50fe0a65d9e5bcbb3110124a
+      AccessKey : *<Access key>*
+      SecretKey : *<secret key>*
       API       : s3v4
       Path      : auto
     ```
     If it is not set correctly, then create the alias with
     ```
-    mc alias set watsonx-minio http://localhost:9000 261876628da42a95863235df 50fe0a65d9e5bcbb3110124a
+    mc alias set watsonx-minio http://localhost:9000 *<Access key>* *<secret key>*
     ```
   * Create the `demo` bucket
     ```
@@ -118,9 +128,10 @@ A solution is needed to:
     ```
     mc ls watsonx-minio
     ```
-  * Copy `demo.device_registry_.parquet` file to the `demo bucket` under a folder called `devices`
+  * Copy `demo.device_registry_csv.parquet` file to the `demo bucket` under a folder called `devices`
     ```
     mc cp data/demo.device_registry_csv.parquet watsonx-minio/demo/devices/device_registry.parquet
+
     mc ls watsonx-minio/demo-devices
     ```
 
@@ -141,22 +152,23 @@ A solution is needed to:
 * Add *postgreSQL* catalogue to *watsonx.data* lake-house
   1. First we need to discover important information about the *PostgreSQL* installation
     1. open a command terminal
-    2. enter `docker network inspect ibm-lh-network | jq -r '.[0].Containers | map({"Name" : .Name, "IP" : .IPv4Address}).[] | select( .Name == "ibm-lh-postgres")'`
-    3. Note the value for `IP`. This is the IP address for the container running the PostgreSQL server.
+    2. To retrieve the postgreSQL admin user password, enter `docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//'` 
+        *Note:* The password should have been set to the environment variable `PGPASSWORD` in the demo preparation step.
 
   2. Add the *PostgreSQL* database to the lake-house
     1. Select the *Infrastructure Manager*
     2. Click *Add Component*, select *Add Database*
     3. In the *Add Database* dialogue enter the following
        *  Database type: *PostgreSQL* (it can be found under the From Others section)
-       *  Database name: *demo*
+       *  Database name: *watsonx*
        *  Display name: *PostgreSQLDB*
-       *  Hostname: *<IP Address from step 3>*
+       *  Hostname: *ibm-lh-postgres*
        *  Port: *5432*
        *  Username: *admin*
-       *  Password: *<Password from step 4>*
+       *  Password: *<Password from step 2>*
        *  Catalog name: *pgcatalog*
 
+  3. Create association from the `pgcatalog` to the `presto` engine. Select *Save and restart engine*.
   3. Select *Data Manager* from the left-side menu
   4. Expand *pgcatalog*
   5. Show events table information, including schema
@@ -172,15 +184,24 @@ A solution is needed to:
 
 * Add a hive catalog called `demo_data` to view the device data from minio.
   1. Use watsonx.data cosole, *Infrastructure manager* panel, to add a new object storage location connected to the `demo` bucket. Associate the new storage with an Apache Hive catalogue called `demo_data`.
+  In the *Add storage* dialogue enter the following
+       *  Database type: *MinIO* (it can be found under the From Others section)
+       *  Bucket name: *demo*
+       *  Display name: *demo*
+       *  Endpoint: *http://ibm-lh-minio:9000*
+       *  Acccess Key: *<Access key>*
+       *  Secret key: *<Secret key>*
+       *  Associated catalog type: *Apache Hive*
+       *  Catalog name: *demo_data*
 
-  2. Connect the `demo_data` catalog to the `presto` engine.
+  1. Connect the `demo_data` catalog to the `presto` engine.
 
-  3. Start the presto CLI
+  2. Start the presto CLI
       ```
       ~/dev/watsonx.data/ibm-lh-dev/bin/presto-cli
       ```
 
-  4. Create a schema called `devices` in the `demo_data` catalogue. The schema will be physicall located in the object storage demo bucket This is where the device registry table will exist.
+  3. Create a schema called `devices` in the `demo_data` catalogue. The schema will be physicall located in the object storage demo bucket This is where the device registry table will exist.
       ```
       create schema if not exists demo_data.devices
         with (location='s3a://demo/devices');
@@ -188,7 +209,7 @@ A solution is needed to:
       show schemas;
       ```
     
-  5. Create a table in presto based on the device registry
+  4. Create a table in presto based on the device registry
       ```
       CREATE TABLE
         demo_data.devices.device_registry (
@@ -200,14 +221,14 @@ A solution is needed to:
           status varchar)
         WITH (
           format = 'PARQUET',
-          location='s3a://demo/devices/device_registry.parquet');
+          external_location='s3a://demo/devices/');
 
       DESCRIBE demo_data.devices.device_registry;
 
       SELECT * FROM demo_data.devices.device_registry;
       ```
 
-  6. Now a user can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
+  5. Now a user can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
       ```
       SELECT device.id AS device_id,
           event.timestamp AS timestamp,
@@ -215,8 +236,8 @@ A solution is needed to:
           event.data_point AS data_point,
           device.owner AS device_owner,
           device.status AS device_status
-        FROM demo.demo.events AS event,
-          hive_data.devices2.device_registry2 AS device
+        FROM pgcatalog.demo.events AS event,
+          demo_data.devices.device_registry AS device
         WHERE event.source_id = device.id
           AND device.id = 'vcu-0010'
         ORDER BY event.timestamp;

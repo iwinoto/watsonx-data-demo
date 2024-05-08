@@ -15,9 +15,9 @@ CREATE TABLE demo.events
     data varchar);
 
 -- Copy data from a CSV file into the new table
--- COPY command is not standard SQL, but is supported
--- by many servers including PostgreSQL and DB2
-copy demo.events FROM './demo.events.csv' WITH (FORMAT csv, DELIMITER ',', HEADER TRUE);
+-- The PostgreSQL \copy command is a meta-command
+-- available from the psql interactive client tool.
+\copy demo.events FROM './demo.events.csv' WITH (FORMAT csv, DELIMITER ',', HEADER TRUE);
 
 -- Sample query to test table contents
 -- select events coming from VSU devices (representing package sensors)
