@@ -1,14 +1,16 @@
 # IBM watsonx.data Demonstration
 
 ## Fictional Client: Life Sciences organisation
-A life sciences start-up. They have developed a cloud deployed software platform that controls the supply chain of biological material products including sperm and embryo. The supply chain collects biological material from donors. The material is frozen for transport. The frozen material is transported. At its first destination it may be stored or defrosted for further processing.
+A life sciences start-up. They have developed a cloud deployed software platform that controls the supply chain of biological material products such as blood, sperm and embryo. The supply chain collects biological material from donors. The material is frozen and is transported. At its first destination it may be stored or defrosted for further processing.
 
-In either case, the devices which perform the function to feeze or thaw the material collect data during the process. The data is stored on the platform in an RDBMS type data store. Sensor data attached to the material also collects environmental data as the material is transported or stored. Material environmental data is stored in the same RDBMS and the data from freezing and thawing devices.
+In either case, the devices which perform the function to feeze or thaw the material collect data during the process. The data is stored on the platform in an RDBMS type data store. Sensor data attached to the material also collects environmental data as the material is transported or stored. Material environmental data is stored in the same RDBMS as the data from freezing and thawing devices.
 
 ## Pain point
-The enterprise would like to analyse the data collected to learn about the factors impacting material viability through it's lifecycle. This is **important** to feedback in to the freezing and thawing steps to maintain an improve material viability in all stages of handling and storage. The modelling used to analyse the data is not a pain point to the enterprise. What is a pain point is how the data is fed into the model efficiently and without impacting other critical business processes which rely on the data store.
+The enterprise would like to analyse the data collected to learn about the factors impacting material viability through it's lifecycle. This is **important** to feedback in to the freezing and thawing steps to maintain an improve material quality through all stages of handling and storage. The enterpise has developed a machine learning model to analyse the data from devices and suggest adjustment to device parameters which can improve quality. What is a pain point is how the data is fed into the model efficiently and without impacting other critical business processes which rely on the data store.
 
 Because data is currently stored in RDBMS, it is challenging for Vitrafy to access the data without impacting platform performance. Additionally, analysis does not require access to realtime data as results are not impacted by the presence of the most recent data points.
+
+In the future the enterprise envisages that data from other sources will be incorporated into the ML model to further improve outcomes.
 
 A solution is needed to:
 * easily offload data to an offline repository for analysis on a regular basis.
@@ -17,9 +19,11 @@ A solution is needed to:
 * because the enterprise is a startup business, the platform solution is likely to evolve rapidly in response to growing the business and client demand. This may result in rapid changes to the data schema and data storage landscape; that is, other databases may be added to the RDBMS or other storage technology such as document based storage may be added to the solution.
 * access to live data for analysis can disrupt platform performance and impact user experience
 * Also runtime OLTP data store schemas tend to be normalised to improve DB performance. However data scientist typically need access to un-normalised data to be able to perform longitudinal analysis of data for pattern extraction and modelling
-* Data analysis would be most easily done if data is in a lake house type system where it can be off-line and combined with other data.
-* Moving data from OTLP stores to lake-houses can be time consuming and expensive. Also requires governance to maintain data currency
-* watsonx.data is an open lakehouse implementation that can solve these problems 
+
+Data analysis would be most easily done if data is in a lake house type system where it can be off-line and combined with other data.
+
+Moving data from OTLP stores to lake-houses can be time consuming and expensive. Also requires governance to maintain data currency
+*watsonx.data* is an open lakehouse implementation that can solve these problems 
 
 ## Watsonx.data value proposition
 * Modernise storage by moving data from on-line storage to data lake archive storage.
@@ -27,8 +31,12 @@ A solution is needed to:
 * Connects to S3 compliant low cost object store for data storage.
 * Connects to various storage technologies using common standards such as S3 or open source for data lake.
 * Implements open source standards for data lake cataloguing
-* Provides open source SQL engines to efficiently execute queries on data lakes and lakehouses
+* Provides open source SQL engines like Presto and Spark to efficiently execute queries on data lakes and lakehouses
+* Connects with many open source and proprietary data stores and services (postgres, DB2, Snowflake, S3 object stores, other data warehouses)
 * Provides library of open source query engines that are popular in the market so data scientist do not need to learn new proprietary tools
+* Connects with powerful opensource tools like Hive Meta Store and Iceberg which provides tooles like time travel and alterations to tables
+* Can be part of an end-to-end AI pipeline with integration to watsonx.ai, Studio and other products
+* Hybrid deploymention opotions - on/off-prem, PaaS or SaaS
 * allows for offloading existing data from a client’s enterprise data warehouse (EDW), where the performance requirements and/or frequency with which the data is accessed don’t justify the costs of having that data in the warehouse (keep in mind that costs aren’t limited to the data storage itself; there are costs in preparing and moving data into the warehouse, additional storage costs for larger backup images, the impact of running relatively low priority workloads at the same time as higher priority workloads, and so on).
 * queries can combine data in the warehouse with the data in the lakehouse. This provides clients with complete flexibility in where they store their data.
 * Presto in watsonx.data can currently connect to IBM Db2, Netezza, Apache Kafka, Elasticsearch, MongoDB, MySQL, PostgreSQL, SAP HANA, SingleStore, Snowflake, SQL Server, Teradata, and others through a custom connector
@@ -106,7 +114,7 @@ A solution is needed to:
     ```
     docker exec ibm-lh-presto printenv | grep LH_S3_SECRET_KEY | sed 's/.*=//'
     ```
-  * Make sure minio client alias is set up for watsonx docker environment. `mc alias list watson-minio` should return as below
+  * Make sure minio client alias is set up for watsonx docker environment. `mc alias list watsonx-minio` should return as below
     ```
     $ mc alias list watsonx-minio
     watsonx-minio
@@ -122,7 +130,7 @@ A solution is needed to:
     ```
   * Create the `demo` bucket
     ```
-    mc mb watson-minio/demo
+    mc mb watsonx-minio/demo
     ```
     Check that the bucket has been created
     ```
@@ -132,7 +140,7 @@ A solution is needed to:
     ```
     mc cp data/demo.device_registry_csv.parquet watsonx-minio/demo/devices/device_registry.parquet
 
-    mc ls watsonx-minio/demo-devices
+    mc ls watsonx-minio/demo/devices
     ```
 
 ### Demonstration
@@ -282,8 +290,26 @@ There are issues with the instructions and scripts that need to be resolved.
   ## diag run mode so developer can access postgres, minio and hive containers from host.
   export LH_RUN_MODE=diag
   ```
+#### Reset the local environment
+1. Change directory to *watsonx.data Developer Edition* root directory.
+2. Configure the environment variables. The setup instructions will have guided you to create a file to initialise environment variable. `source setenv.sh`
+3. Stop the container images
+    ```
+    $LH_ROOT_DIR/ibm-lh-dev/bin/stop
+    ```
+4. Delete, or rename the local storage directory `$LH_ROOT_DIR/ibm-lh-dev/localstorage/`
+5. Set up the runtime. This step will also re-create the `localstorage` directory.
+    ```
+     $LH_ROOT_DIR/ibm-lh-dev/bin/setup --license_acceptance=y --runtime=$DOCKER_EXE
+     ```
+6. Start the containers
+    ```
+    $LH_ROOT_DIR/ibm-lh-dev/bin/start
+    ```
+    This will take a few minutes to complete.
+7. Open the *[watsonx.data console](https://localhost:9443/)* console to test the running conainers.
 
-### Tesing DB2 locally
+### Testing DB2 locally
 **Not successful**
 
 Run DB2 Community edition in a container. This [article](https://www.ibm.com/docs/en/db2/11.5?topic=system-windows) describes how. The article uses docker, but can also be run in podman. Just replace `docker` command with `podman`.
