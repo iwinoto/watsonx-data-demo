@@ -167,14 +167,14 @@ Moving data from OTLP stores to lake-houses can be time consuming and expensive.
     1. Select the *Infrastructure Manager*
     2. Click *Add Component*, select *Add Database*
     3. In the *Add Database* dialogue enter the following
-       *  Database type: *PostgreSQL* (it can be found under the From Others section)
-       *  Database name: *watsonx*
-       *  Display name: *PostgreSQLDB*
-       *  Hostname: *ibm-lh-postgres*
-       *  Port: *5432*
-       *  Username: *admin*
-       *  Password: *<Password from step 2>*
-       *  Catalog name: *pgcatalog*
+       *  Database type: ***PostgreSQL*** (it can be found under the From Others section)
+       *  Database name: ***watsonx***
+       *  Display name: ***PostgreSQLDB***
+       *  Hostname: ***ibm-lh-postgres***
+       *  Port: ***5432***
+       *  Username: ***admin***
+       *  Password: ***<Password from step 2>***
+       *  Catalog name: ***pgcatalog***
 
   3. Create association from the `pgcatalog` to the `presto` engine. Select *Save and restart engine*.
   3. Select *Data Manager* from the left-side menu
@@ -193,14 +193,14 @@ Moving data from OTLP stores to lake-houses can be time consuming and expensive.
 * Add a hive catalog called `demo_data` to view the device data from minio.
   1. Use watsonx.data cosole, *Infrastructure manager* panel, to add a new object storage location connected to the `demo` bucket. Associate the new storage with an Apache Hive catalogue called `demo_data`.
   In the *Add storage* dialogue enter the following
-       *  Database type: *MinIO* (it can be found under the From Others section)
-       *  Bucket name: *demo*
-       *  Display name: *demo*
-       *  Endpoint: *http://ibm-lh-minio:9000*
-       *  Acccess Key: *<Access key>*
-       *  Secret key: *<Secret key>*
-       *  Associated catalog type: *Apache Hive*
-       *  Catalog name: *demo_data*
+       *  Database type: ***MinIO*** (it can be found under the From Others section)
+       *  Bucket name: ***demo***
+       *  Display name: ***demo***
+       *  Endpoint: ***http://ibm-lh-minio:9000***
+       *  Acccess Key: ***<Access key>***
+       *  Secret key: ***<Secret key>***
+       *  Associated catalog type: ***Apache Hive***
+       *  Catalog name: ***demo_data***
 
   1. Connect the `demo_data` catalog to the `presto` engine.
 
@@ -214,7 +214,7 @@ Moving data from OTLP stores to lake-houses can be time consuming and expensive.
       create schema if not exists demo_data.devices
         with (location='s3a://demo/devices');
 
-      show schemas;
+      show schemas in demo_data;
       ```
     
   4. Create a table in presto based on the device registry
@@ -235,8 +235,8 @@ Moving data from OTLP stores to lake-houses can be time consuming and expensive.
 
       SELECT * FROM demo_data.devices.device_registry;
       ```
-
-  5. Now a user can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
+* Query across data sources
+  1. Now a user can do a federated search across data from heterogenous datastores (a postgreSQL data engine for events and device information from a parquet file) to show all events from a particular device, who owns the device and the device status.
       ```
       SELECT device.id AS device_id,
           event.timestamp AS timestamp,
@@ -251,6 +251,30 @@ Moving data from OTLP stores to lake-houses can be time consuming and expensive.
         ORDER BY event.timestamp;
       ```
       This can be used to create another table in the lake-house (using the Create Table As Select, CTAS, pattern). This can be further analysed or used as input to machine learning models for AI use cases.
+* Move data to a new table 
+  1. so far we have worked with Hive catalog for data ingest and exploration. Iceberg is a more advanced catalog table format which has additional capabilities like:
+    * atomic transactions - we can write to the table
+    * time machine - generates table snapshots that we can roll back to or query
+    * schema alterations - as the data changes, we can alter the schema by adding / removal columns.
+  2. we use *CTAS* (Create Table As Select) type of SQL query to create a new table the iceberg catalog based on a `SELECT` query. Either in *Presto CLI* or console SQL tab, enter the following SQL:
+    ```
+    CREATE TABLE "iceberg_data"."events"."device_events"
+      AS SELECT device.id AS device_id,
+        event.timestamp AS timestamp,
+        event.data AS data,
+        event.data_point AS data_point,
+        device.owner AS device_owner,
+        device.status AS device_status
+      FROM pgcatalog.demo.events AS event,
+        demo_data.devices.device_registry AS device
+      ORDER BY event.timestamp;
+    ```
+  3. Show device_events table *Time Travel*
+  4. Insert data
+  5. Select the data to show it's inserted
+  6. Roll back
+  7. Select the data to show it's no longer there
+
 
 ## Client "call to action"
 Clients can start with the developer edition of watsonx.data. This can be run locally using container images and is used in this demonstration.
@@ -298,10 +322,10 @@ There are issues with the instructions and scripts that need to be resolved.
     $LH_ROOT_DIR/ibm-lh-dev/bin/stop
     ```
 4. Delete, or rename the local storage directory `$LH_ROOT_DIR/ibm-lh-dev/localstorage/`
-5. Set up the runtime. This step will also re-create the `localstorage` directory.
+5. Set up the runtime. This step will also create the `localstorage` directory if it was deleted.
     ```
-     $LH_ROOT_DIR/ibm-lh-dev/bin/setup --license_acceptance=y --runtime=$DOCKER_EXE
-     ```
+    $LH_ROOT_DIR/ibm-lh-dev/bin/setup --license_acceptance=y --runtime=$DOCKER_EXE
+    ```
 6. Start the containers
     ```
     $LH_ROOT_DIR/ibm-lh-dev/bin/start
