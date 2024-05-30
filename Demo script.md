@@ -256,6 +256,7 @@ Moving data from OTLP stores to lake-houses can be time consuming and expensive.
     * atomic transactions - we can write to the table
     * time machine - generates table snapshots that we can roll back to or query
     * schema alterations - as the data changes, we can alter the schema by adding / removal columns.
+  2. Create `events` schema in the `iceberg_data` catalog
   2. we use *CTAS* (Create Table As Select) type of SQL query to create a new table the iceberg catalog based on a `SELECT` query. Either in *Presto CLI* or console SQL tab, enter the following SQL:
     ```
     CREATE TABLE "iceberg_data"."events"."device_events"
